@@ -68,20 +68,6 @@ This allows for powerful and clear branching logic. For example, a composite sta
 
 ---
 
-## Example: Process and Result Handling
-
-Imagine a composite state called `Process`, which contains two steps: `A` and `B`. If both succeed, the process should transition to a handler for successful outcomes. If an error occurs, it should instead transition to a failure handler.
-
-Now imagine another composite state called `HandleResult`, which contains different behaviors depending on whether success or failure was encountered.
-
-Entry and exit points allow this exact kind of pattern:
-- `Process` exits via a `success` or `error` point
-- `HandleResult` begins at the appropriate matching entry
-
-This makes the logic expressive, modular, and easy to follow — and it avoids cluttering the outer statechart with unnecessary intermediate states.
-
----
-
 ## Summary
 
 Composite states give your statecharts **structure**, **clarity**, and **scalability**. They help you:
