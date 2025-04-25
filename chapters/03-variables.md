@@ -17,7 +17,7 @@ In short, variables give your statechart context — they turn simple reactions 
 
 ## What is a Variable?
 
-A **variable** is a named container for a value. It has a type (like number, text, or boolean) and it can be used in:
+A **variable** is a named container for a value. In some tools it has a type (like number, string, or boolean) and it can be used in:
 - Guard conditions (e.g. `[counter > 3]`)
 - Actions (e.g. `counter += 1`)
 - Event payloads
@@ -39,20 +39,6 @@ Most statechart languages support standard data types, such as:
 | `string`  | `"hello"`        | Text                              |
 
 In a strongly typed environment, each variable has a fixed type, and type safety is enforced at design time. This means you can't assign a `string` to an `integer`, for example.
-
----
-
-## Read-Only and Constants
-
-Some variables are marked as `readonly` — they can be changed *within* the statechart, but not from the outside.
-
-Constants (`const`) are variables that never change after they are set. They're great for fixed values like configuration settings or thresholds.
-
-```text
-// example
-readonly var maxRetries : integer = 3
-const appName : string = "StateMaster"
-```
 
 ---
 
@@ -82,45 +68,11 @@ You can combine variables with arithmetic, logical operations, and conditional e
 
 Let's say we have a light that toggles between `On` and `Off`, and we want to count how many times the light was turned on.
 
-```text
-// Variable declaration
-var switchCount : integer = 0
-```
+ <iframe src="https://play.itemis.io?model=fcd0ae75-6ec0-4cb9-9597-d5e8615aa9d9" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
-### States and Transitions
+This statechart models a simple light switch mechanism with two states: On and Off. It utilizes two variables, isOn and counter, to manage the state transitions and track the number of times the light is turned on.
 
-```text
-// State: Off
-entry / log("Entering Off")
-exit / log("Leaving Off")
-
-// Transition: Off -> On
-buttonPressed / switchCount += 1
-```
-
-```text
-// State: On
-entry / log("Light turned on " + switchCount + " times")
-exit / log("Leaving On")
-
-// Transition: On -> Off
-buttonPressed
-```
-
-Each time the light is turned on, the counter increases. When entering the `On` state, it logs how many times the switch was used. The `Off` state also logs entry and exit to show variable usage there too.
-
----
-
-## Type Safety
-
-In a statically typed system, you'll get feedback immediately if you try something invalid — like assigning a boolean to a number. This prevents bugs and makes your statechart more robust.
-
-You can also cast between types when needed:
-
-```text
-// Cast from real to integer (might truncate)
-x = y as integer
-```
+Each time the light is turned on, the counter increases. When entering the `On` state, the `entry` action increases the variable `counter`. When the `buttonPressed` event is raised, the transition effect set the variable `isOn` to true or false. 
 
 ---
 
@@ -133,9 +85,9 @@ They help you:
 - Store internal state cleanly
 - Avoid cluttering your chart with unnecessary states
 
-As a rule of thumb:
-
+> [!TIP]
 > If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
+
 
 In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
 

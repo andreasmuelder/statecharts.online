@@ -23,6 +23,8 @@ There is always one **initial state** where the system starts, and from there, i
 
 Let's take a very basic example: a light switch.
 
+---
+
 ### Example: A Simple Light Switch
 
  <iframe src="https://play.itemis.io?model=7ec86474-66d1-4cca-bb60-6f7d91e9601d" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
@@ -41,6 +43,8 @@ And one input:
 If the light is `Off` and the button is pressed, we transition to `On`. Press it again, we go back to `Off`.
 
 This might look like overkill for a simple light, but the moment you want to add brightness levels, timers, motion sensors, or modes like "night mode," you'll quickly realize the value of modeling behavior cleanly.
+
+---
 
 ## Why Use State Machines?
 
