@@ -1,5 +1,4 @@
 ---
-layout: page
 title: The Pragmatic Guide to State Machines
 ---
 
