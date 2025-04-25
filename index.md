@@ -4,16 +4,6 @@ title: The Pragmatic Guide to State Machines
 
 Welcome to *The Pragmatic Guide to State Machines*! This guide will take you from the basics of state machines to advanced modeling techniques, all while keeping things practical and focused on real-world applications.
 
-## Table of Contents
-
-1. [What is a State Machine?](chapters/01-what-is-a-state-machine.md)
-2. [States, Transitions, and Events](chapters/02-states-transitions-and-events.md)
-3. [Variables – Giving Your Statechart a Memory](chapters/03-variables.md)
-4. [Composite States – Organizing Behavior with Hierarchy](chapters/04-composite-states.md)
-5. [Orthogonal States – Modeling Concurrency Cleanly](chapters/05-orthogonal-states.md)
-6. [Final States, Choices, and History](chapters/06-final-states-choices-and-history.md)
-7. [Summary and Next Steps](chapters/07-summary-and-next-steps.md)
-
 ## About This Guide
 
 This guide is designed to be:
