@@ -15,19 +15,11 @@ A **composite state** is a state that contains a nested region with its own subs
 
 When the composite state is active, it delegates control to its internal region. This helps organize logic, isolate complexity, and reuse patterns across different parts of your system.
 
----
-
-## Why Use Composite States?
-
 Composite states are useful when:
 - A state represents a multi-step process
 - You want to group related states with common behavior
 - You need to split up a large, flat statechart into manageable pieces
 - You want to create reusable sub-behaviors or modes
-
----
-
-## How Composite States Work
 
 When a composite state is entered, it behaves just like a new statechart:
 - It starts at a special **entry point**
