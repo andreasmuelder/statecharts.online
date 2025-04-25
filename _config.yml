@@ -1,8 +1,12 @@
 title: The Pragmatic Guide to State Machines
 email: your-email@example.com
-description: >- 
+description: >-
   A practical guide to understanding and implementing state machines in software development.
   Learn from basics to advanced concepts with real-world examples.
+baseurl: ""
+url: "https://your-site.com"
+twitter_username: your-twitter-handle
+github_username: your-github-handle
 
 # Build settings
 markdown: kramdown
@@ -47,4 +51,7 @@ exclude:
   - node_modules
   - vendor
   - _layouts
-  - assets 
+  - assets
+
+# Redirect root to first chapter
+permalink: /chapters/01-what-is-a-state-machine.html 
