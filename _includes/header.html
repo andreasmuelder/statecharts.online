@@ -1,0 +1,67 @@
+<header class="site-header" role="banner">
+    <div class="wrapper">
+        <a class="site-title" rel="author" href="{{ " /" | relative_url }}">{{ site.title | escape }}</a>
+        <br>
+        <br>
+        <br>
+        <ol>
+            <li><a href="/chapters/01-what-is-a-state-machine.html">What is a State Machine?</a></li>
+            <li><a href="/chapters/02-states-transitions-and-events.html">States, Transitions, and Events</a></li>
+            <li><a href="/chapters/03-variables.html">Variables – Giving Your Statechart a Memory</a></li>
+            <li><a href="/chapters/04-composite-states.html">Composite States – Organizing Behavior with Hierarchy</a>
+            </li>
+            <li><a href="/chapters/05-orthogonal-states.html">Orthogonal States – Modeling Concurrency Cleanly</a></li>
+            <li><a href="/chapters/06-final-states-choices-and-history.html">Final States, Choices, and History</a></li>
+            <li><a href="/chapters/07-summary-and-next-steps.html">Summary and Next Steps</a></li>
+        </ol>
+    </div>
+</header>
+
+<style>
+    .site-header {
+        border-top: none;
+        border-bottom: 1px solid #e8e8e8;
+        min-height: 56px;
+        position: relative;
+    }
+
+    .site-nav {
+        float: none;
+        line-height: 1.5;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .site-nav .page-link {
+        color: #2a7ae2;
+        text-decoration: underline;
+        line-height: 1.5;
+        display: block;
+        padding: 2px 0;
+        text-align: left;
+    }
+
+    .site-nav .page-link:hover {
+        text-decoration: none;
+        color: #1756a9;
+    }
+
+    @media screen and (max-width: 600px) {
+        .site-nav {
+            position: static;
+            background-color: transparent;
+            border: none;
+            text-align: left;
+        }
+
+        .site-nav .trigger {
+            display: block;
+        }
+
+        .site-nav .page-link {
+            display: block;
+            padding: 5px 0;
+            text-align: left;
+        }
+    }
+</style>
