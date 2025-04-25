@@ -21,6 +21,8 @@ Let’s take a very basic example: a light switch.
 
 ### Example: A Simple Light Switch
 
+ <iframe src="https://play.itemis.io?model=7ec86474-66d1-4cca-bb60-6f7d91e9601d" allowfullscreen></iframe>
+
 We can model the switch with two states:
 - `On`
 - `Off`
