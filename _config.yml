@@ -47,6 +47,3 @@ exclude:
   - vendor
   - _layouts
   - assets
-
-# Redirect root to first chapter
-permalink: learning/chapters/01-what-is-a-state-machine.html 
