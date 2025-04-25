@@ -372,3 +372,242 @@ Composite states give your statecharts **structure**, **clarity**, and **scalabi
 
 In the next chapter, we’ll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.
 
+# Chapter 5: Orthogonal States – Modeling Concurrency Cleanly
+
+In real-world systems, things often happen at the same time — or at least, independently. For example, a washing machine might be heating water while spinning the drum. A robot might be tracking its position while checking for obstacles.
+
+To model this kind of behavior, statecharts support **orthogonal states** — a way to express **concurrent behavior** within a single statechart.
+
+---
+
+## What Are Orthogonal States?
+
+An **orthogonal state** is essentially a composite state that contains **multiple regions**. Each region can have its own set of substates, transitions, and logic. These regions are executed **virtually in parallel**.
+
+> Important: **Orthogonal states are not true parallel execution.**  
+> They are evaluated **sequentially**, one after another, during each execution cycle.
+
+This design is intentional. Orthogonality is about modeling *logical concurrency*, not multithreading. You don’t have to deal with synchronization, race conditions, or thread safety — you just model separate, independent behaviors that **run side-by-side** from a conceptual point of view.
+
+---
+
+## Why Use Orthogonal States?
+
+Orthogonal states are ideal when:
+- You want to model **independent modes or components** within a system
+- You have multiple **subsystems that operate in parallel**
+- You want to avoid tangled logic by splitting responsibilities across regions
+
+Examples:
+- In a smart home system, one region controls the lights, another handles heating.
+- In a vehicle, one region manages cruise control, another handles lane keeping.
+
+Each part has its own logic, but they run **together** as long as the parent orthogonal state is active.
+
+---
+
+## How Execution Works
+
+When an orthogonal state is entered:
+- All of its regions are entered simultaneously (logically speaking)
+- Each region activates its own initial substate
+
+During each execution cycle:
+- All regions are evaluated **in a defined order** (typically top-to-bottom, left-to-right)
+- Transitions in one region do **not block** or delay transitions in other regions
+
+This allows multiple independent state machines to share a synchronized clock, yet evolve independently.
+
+When an orthogonal state is exited:
+- All active substates in **all regions** are exited
+
+---
+
+## Synchronization and Coordination
+
+Sometimes you’ll want to coordinate between regions. This can be done using:
+- **Events** raised by one region and handled in another
+- **Variables** shared across regions
+- **Exit and entry points** combined with synchronization nodes (in some tools)
+
+This is how orthogonal regions can still collaborate — even though they’re logically separate.
+
+---
+
+## Summary
+
+Orthogonal states are a powerful tool for modeling **concurrent, but independent** behaviors within a single system.
+
+They help you:
+- Keep related concerns separated
+- Model multiple control flows cleanly
+- Avoid complex nesting by distributing logic across parallel regions
+
+Just remember: orthogonality is **not true parallelism**. It’s a way to think about things happening side by side — while still executing in a **defined, sequential order**.
+
+In the next chapters, we’ll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox.
+
+# Chapter 6: Final States, Choices, and History – Controlling Flow and Remembering State
+
+As you model more complex behavior in a statechart, you’ll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:
+
+- **Final states** to indicate completion
+- **Choice nodes** to make conditional decisions
+- **History states** to remember previously active states
+
+---
+
+## Final States – Marking the End of a Flow
+
+A **final state** marks the end of a state machine or region. When the system reaches a final state, that region stops executing and becomes inactive.
+
+Final states are typically used to:
+- Indicate completion of a task or process
+- Trigger transitions to a new phase
+- Coordinate across parallel regions
+
+Each region can have **one final state**, and it may have **multiple incoming transitions**.
+
+> If a state machine has multiple orthogonal regions, execution only proceeds when **all** regions have reached their final state.
+
+Final states are different from **exit points**, which are used to leave a composite state. A final state means "we're done here"; an exit point means "we're leaving early."
+
+---
+
+## Choice Nodes – Making Conditional Decisions
+
+A **choice node** is a pseudo-state that lets you branch conditionally after a transition.
+
+Here’s how it works:
+- A transition leads into a choice node
+- Multiple transitions lead out, each with a guard condition
+- The first transition whose guard evaluates to `true` is taken
+- If no guard matches, a **default transition** should be provided (using a trigger like `else` or `default`)
+
+This pattern is useful when the system needs to evaluate data and choose between multiple paths.
+
+### Example:
+
+Imagine a quiz system that branches depending on the score:
+- If `score >= 80`, go to `PassWithDistinction`
+- If `score >= 50`, go to `Pass`
+- Otherwise, go to `Fail`
+
+A choice node makes this logic explicit and easy to model.
+
+---
+
+## History States – Picking Up Where You Left Off
+
+A **history state** allows a composite state to remember which substate was active the last time it was exited. The next time the composite state is entered, it resumes at that remembered state instead of starting from the beginning.
+
+There are two types of history states:
+- **Shallow history**: remembers the active state **one level deep**
+- **Deep history**: remembers the active state **recursively**, including any nested composite states
+
+History states are useful when:
+- You want to **pause and resume** processes
+- You want to **save user progress**
+- You want to avoid repeating already completed steps
+
+### Shallow History Example
+
+Imagine a form with multiple steps inside a composite state called `answeringQuestions`. At any time, the user can press "Pause", which returns the system to an outer state like `Init`. Later, when they hit "Continue", the system resumes **exactly where they left off** — thanks to the shallow history state.
+
+Shallow history tracks only the most recent active substate in that region.
+
+### Deep History Example
+
+If your substates themselves contain **nested composite states**, and you want to resume the entire nested hierarchy, use a **deep history state**. It remembers not just one level, but the full internal configuration.
+
+This is especially useful in systems with complex workflows, multiple levels of modes, or nested user interfaces.
+
+---
+
+## Summary
+
+These advanced flow control tools give you more flexibility and precision in your statecharts:
+
+- **Final states** signal completion
+- **Choice nodes** enable dynamic branching
+- **History states** preserve execution context across interruptions
+
+Used correctly, they can make your models more robust, interactive, and user-friendly — especially in systems where users pause, resume, retry, or take different paths based on conditions.
+
+In the next chapter, we’ll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
+
+# Chapter 7: Summary and Next Steps
+
+Congratulations! You've now worked through the foundational concepts of modern statecharts — from the basics to more advanced modeling techniques. Whether you're building embedded systems, user interfaces, automation logic, or reactive workflows, statecharts offer a powerful, visual, and maintainable way to model behavior.
+
+---
+
+## What You’ve Learned
+
+Here’s a quick recap of what we’ve covered:
+
+- **Chapter 1: What is a State Machine?**  
+  You learned the core idea of modeling behavior as a set of states and transitions triggered by events.
+
+- **Chapter 2: States, Transitions, and Events**  
+  You explored how states define behavior, transitions connect them, and events trigger movement through the system.
+
+- **Chapter 3: Variables – Giving Your Statechart a Memory**  
+  You added memory and logic to your models through variables, expressions, and guard conditions.
+
+- **Chapter 4: Composite States – Organizing Behavior with Hierarchy**  
+  You discovered how to simplify large diagrams using nested statecharts with entry and exit points.
+
+- **Chapter 5: Orthogonal States – Modeling Concurrency Cleanly**  
+  You learned how to model independent behaviors that run side-by-side using orthogonal regions.
+
+- **Chapter 6: Final States, Choices, and History**  
+  You mastered tools to control flow and preserve state, including final states, conditional branching, and both shallow and deep history.
+
+---
+
+## Why This Matters
+
+Statecharts aren’t just an academic tool — they’re practical, scalable, and designed to make complex behavior **easier to understand** and **easier to build**.
+
+Used correctly, they help you:
+- Make requirements visual and precise
+- Reduce bugs in complex workflows
+- Improve maintainability and reuse
+- Align teams on system behavior
+
+---
+
+## What’s Next?
+
+Now that you've learned the theory, it’s time to get your hands dirty. Try modeling a real system — something from your work, a UI flow, or a home automation process. Start simple, then grow complexity with hierarchy, concurrency, and history when needed.
+
+You might also explore:
+- Simulation and testing of statecharts
+- Code generation for embedded systems or web applications
+- Modeling patterns and best practices
+- Integrating statecharts into larger software architectures
+
+---
+
+## Try itemis CREATE
+
+To apply your knowledge and explore further, consider using [itemis CREATE](https://create.itemis.io), a powerful tool for modeling, simulating, and generating code from statecharts.
+
+### Key Features:
+- **Online Editor**: Model and simulate directly in your browser with the [itemis CREATE Cloud Editor](https://info.itemis.com/en/products/itemis-create/online-web-editor).
+- **Examples Repository**: Access a variety of [examples](https://www.itemis.com/en/products/itemis-create/documentation/examples) to see statecharts in action.
+- **Code Generation**: Generate high-quality source code in languages like C, C++, Java, Python, and more.
+- **Comprehensive Documentation**: Learn more through the [itemis CREATE Documentation](https://www.itemis.com/en/products/itemis-create/documentation/user-guide).
+
+---
+
+## Final Thoughts
+
+The power of statecharts lies in their clarity. They help you think better about behavior — and that alone makes them worth learning.
+
+> Keep your models clean, your states meaningful, and your transitions intentional.
+
+And most of all: enjoy the journey.
+
+Happy modeling!
