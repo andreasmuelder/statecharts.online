@@ -139,4 +139,4 @@ As a rule of thumb:
 
 In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
 
-Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](chapters/04-composite-states.md) 
+Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](04-composite-states.md) 

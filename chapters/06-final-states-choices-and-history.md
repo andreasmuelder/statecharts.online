@@ -90,4 +90,4 @@ Used correctly, they can make your models more robust, interactive, and user-fri
 
 In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
 
-Ready to continue? Head over to [Chapter 7: Summary and Next Steps](chapters/07-summary-and-next-steps.md) 
+Ready to continue? Head over to [Chapter 7: Summary and Next Steps](07-summary-and-next-steps.md) 

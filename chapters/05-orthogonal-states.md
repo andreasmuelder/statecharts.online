@@ -76,4 +76,4 @@ Just remember: orthogonality is **not true parallelism**. It's a way to think ab
 
 In the next chapters, we'll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox.
 
-Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](chapters/06-final-states-choices-and-history.md) 
+Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](06-final-states-choices-and-history.md) 

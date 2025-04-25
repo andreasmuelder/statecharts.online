@@ -89,4 +89,4 @@ Composite states give your statecharts **structure**, **clarity**, and **scalabi
 
 In the next chapter, we'll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.
 
-Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](chapters/05-orthogonal-states.md) 
+Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](05-orthogonal-states.md) 

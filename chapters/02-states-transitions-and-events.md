@@ -88,4 +88,4 @@ But at its core, it's still all about answering:
 - What just happened? (**Event**)
 - What should we do about it? (**Transition**)
 
-Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](chapters/03-variables.md) 
+Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md) 

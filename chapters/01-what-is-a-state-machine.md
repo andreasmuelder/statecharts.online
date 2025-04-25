@@ -60,4 +60,4 @@ In the next chapters, we'll explore how to model richer behavior using powerful 
 
 Let's keep it simple, visual, and focused on solving real problems.
 
-Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](chapters/02-states-transitions-and-events.md) 
+Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](02-states-transitions-and-events.md) 
