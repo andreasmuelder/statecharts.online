@@ -40,6 +40,18 @@ When the composite state is exited:
 
 ---
 
+## Example: A Lightswitch With Two Different Modes
+
+This statechart models a lighting system with two main modes: `Manual` and `MotionSensing`. In `Manual` mode, the user can toggle the light on or off, while in `MotionSensing` mode, the light responds automatically to detected motion and turns off after a set period. The system allows switching between modes and manages brightness accordingly.
+
+In the provided statechart model, composite states are used to encapsulate the behavior of the lighting system in two distinct modes: Manual and MotionSensing. Each of these modes has its own internal states and transitions, which are managed independently within their respective composite states. 
+
+Composite states allow the statechart to be broken down into smaller, more manageable sections. By encapsulating the behavior of the lighting system in separate modes, the statechart becomes easier to read and understand. Each composite state can be viewed as a self-contained module that handles specific functionality, such as manual control or motion sensing.
+
+ <iframe src="https://play.itemis.io?model=8abee2f2-e76d-456d-83d5-87eab96b0475" width="100%" height="800px" style="border: 1px solid" allowfullscreen></iframe>
+
+---
+
 ## Entry Points
 
 Every composite state must define **how it should be entered**.
