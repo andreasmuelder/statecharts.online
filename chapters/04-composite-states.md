@@ -3,8 +3,6 @@ title: Composite States – Organizing Behavior with Hierarchy
 layout: chapter
 ---
 
-# Chapter 4: Composite States – Organizing Behavior with Hierarchy
-
 As your statechart grows, you'll likely end up with more and more states. Things can get messy fast — diagrams become hard to read, logic gets harder to follow, and reuse becomes difficult.
 
 This is where **composite states** come in. They let you group related states together into one logical unit and build **hierarchical** statecharts that scale much better as complexity increases.
@@ -89,4 +87,6 @@ Composite states give your statecharts **structure**, **clarity**, and **scalabi
 - Control how behavior begins and ends using **entry** and **exit** points
 - Model modes and processes in a clear and reusable way
 
-In the next chapter, we'll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*. 
+In the next chapter, we'll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.
+
+Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](chapters/05-orthogonal-states.md) 

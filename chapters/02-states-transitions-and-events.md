@@ -3,8 +3,6 @@ title: States, Transitions, and Events
 layout: chapter
 ---
 
-# Chapter 2: States, Transitions, and Events
-
 At the heart of every statechart are **states**, **transitions**, and **events**. These core elements describe how your system behaves, how it reacts, and how it evolves over time in response to inputs. Let's break them down step by step.
 
 ---
@@ -88,4 +86,6 @@ As you model more complex systems, these simple concepts remain the same. You'll
 But at its core, it's still all about answering:
 - Where are we now? (**State**)
 - What just happened? (**Event**)
-- What should we do about it? (**Transition**) 
+- What should we do about it? (**Transition**)
+
+Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](chapters/03-variables.md) 

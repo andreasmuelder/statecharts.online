@@ -3,8 +3,6 @@ title: What is a State Machine?
 layout: chapter
 ---
 
-# What is a State Machine?
-
 State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they're often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That's enough to scare off anyone who's just trying to build software that works.
 
 The good news? You don't need a PhD in computer science to understand or use state machines. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems. They're especially useful for reactive systems—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
@@ -60,4 +58,6 @@ Once you start using state machines, you'll realize they're not some abstract, a
 
 In the next chapters, we'll explore how to model richer behavior using powerful concepts like hierarchy, modes, conditions, and events—without getting lost in theory.
 
-Let's keep it simple, visual, and focused on solving real problems. 
+Let's keep it simple, visual, and focused on solving real problems.
+
+Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](chapters/02-states-transitions-and-events.md) 

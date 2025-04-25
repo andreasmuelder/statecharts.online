@@ -3,8 +3,6 @@ title: Summary and Next Steps
 layout: chapter
 ---
 
-# Chapter 7: Summary and Next Steps
-
 Congratulations! You've now worked through the foundational concepts of modern statecharts — from the basics to more advanced modeling techniques. Whether you're building embedded systems, user interfaces, automation logic, or reactive workflows, statecharts offer a powerful, visual, and maintainable way to model behavior.
 
 ---
@@ -77,4 +75,10 @@ The power of statecharts lies in their clarity. They help you think better about
 
 And most of all: enjoy the journey.
 
-Happy modeling! 
+Happy modeling!
+
+---
+
+<div class="chapter-navigation">
+  <a href="../chapters/06-final-states-choices-and-history.md" class="prev-chapter">← Previous: Final States, Choices, and History</a>
+</div> 

@@ -3,8 +3,6 @@ title: Final States, Choices, and History – Controlling Flow and Remembering S
 layout: chapter
 ---
 
-# Chapter 6: Final States, Choices, and History – Controlling Flow and Remembering State
-
 As you model more complex behavior in a statechart, you'll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:
 
 - **Final states** to indicate completion
@@ -90,4 +88,6 @@ These advanced flow control tools give you more flexibility and precision in you
 
 Used correctly, they can make your models more robust, interactive, and user-friendly — especially in systems where users pause, resume, retry, or take different paths based on conditions.
 
-In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts. 
+In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
+
+Ready to continue? Head over to [Chapter 7: Summary and Next Steps](chapters/07-summary-and-next-steps.md) 

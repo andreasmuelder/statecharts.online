@@ -3,8 +3,6 @@ title: Orthogonal States – Modeling Concurrency Cleanly
 layout: chapter
 ---
 
-# Chapter 5: Orthogonal States – Modeling Concurrency Cleanly
-
 In real-world systems, things often happen at the same time — or at least, independently. For example, a washing machine might be heating water while spinning the drum. A robot might be tracking its position while checking for obstacles.
 
 To model this kind of behavior, statecharts support **orthogonal states** — a way to express **concurrent behavior** within a single statechart.
@@ -76,4 +74,6 @@ They help you:
 
 Just remember: orthogonality is **not true parallelism**. It's a way to think about things happening side by side — while still executing in a **defined, sequential order**.
 
-In the next chapters, we'll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox. 
+In the next chapters, we'll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox.
+
+Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](chapters/06-final-states-choices-and-history.md) 

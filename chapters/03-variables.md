@@ -3,8 +3,6 @@ title: Variables – Giving Your Statechart a Memory
 layout: chapter
 ---
 
-# Chapter 3: Variables – Giving Your Statechart a Memory
-
 Statecharts become truly powerful when they can *remember* things — and that's exactly what variables allow them to do.
 
 With variables, your statechart can:
@@ -139,4 +137,6 @@ As a rule of thumb:
 
 > If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
 
-In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way. 
+In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
+
+Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](chapters/04-composite-states.md) 
