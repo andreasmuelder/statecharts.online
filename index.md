@@ -1,10 +1,15 @@
+---
+layout: default
+title: The Pragmatic Guide to State Machines
+---
+
 # The Pragmatic Guide to State Machines
 
 ## What is a State Machine?
 
-State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they’re often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That’s enough to scare off anyone who's just trying to build software that works.
+State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they're often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That's enough to scare off anyone who's just trying to build software that works.
 
-The good news? You don’t need a PhD in computer science to understand or use state machines. In fact, state machines (or *statecharts*, as they’re often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems. They're especially useful for reactive systems—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
+The good news? You don't need a PhD in computer science to understand or use state machines. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems. They're especially useful for reactive systems—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
 
 ---
 
@@ -15,9 +20,9 @@ At their core, state machines are made up of **states** and **transitions**.
 - A **state** is just a named situation the system can be in—like `Idle`, `Running`, or `Error`.
 - A **transition** defines when and how the system moves from one state to another, usually triggered by some kind of input or condition.
 
-There is always one **initial state** where the system starts, and from there, it can move between states based on what’s happening in the world around it.
+There is always one **initial state** where the system starts, and from there, it can move between states based on what's happening in the world around it.
 
-Let’s take a very basic example: a light switch.
+Let's take a very basic example: a light switch.
 
 ### Example: A Simple Light Switch
 
@@ -32,7 +37,7 @@ And one input:
 
 If the light is `Off` and the button is pressed, we transition to `On`. Press it again, we go back to `Off`.
 
-This might look like overkill for a simple light, but the moment you want to add brightness levels, timers, motion sensors, or modes like “night mode,” you’ll quickly realize the value of modeling behavior cleanly.
+This might look like overkill for a simple light, but the moment you want to add brightness levels, timers, motion sensors, or modes like "night mode," you'll quickly realize the value of modeling behavior cleanly.
 
 ---
 
@@ -51,23 +56,23 @@ State machines also make it easier to simulate, test, and even generate code for
 
 ---
 
-## State Machines Aren’t Scary
+## State Machines Aren't Scary
 
-Once you start using state machines, you’ll realize they’re not some abstract, academic concept—they're a practical and readable way to design systems that respond to real-world events.
+Once you start using state machines, you'll realize they're not some abstract, academic concept—they're a practical and readable way to design systems that respond to real-world events.
 
-In the next chapters, we’ll explore how to model richer behavior using powerful concepts like hierarchy, modes, conditions, and events—without getting lost in theory.
+In the next chapters, we'll explore how to model richer behavior using powerful concepts like hierarchy, modes, conditions, and events—without getting lost in theory.
 
-Let’s keep it simple, visual, and focused on solving real problems.
+Let's keep it simple, visual, and focused on solving real problems.
 
 # Chapter 2: States, Transitions, and Events
 
-At the heart of every statechart are **states**, **transitions**, and **events**. These core elements describe how your system behaves, how it reacts, and how it evolves over time in response to inputs. Let’s break them down step by step.
+At the heart of every statechart are **states**, **transitions**, and **events**. These core elements describe how your system behaves, how it reacts, and how it evolves over time in response to inputs. Let's break them down step by step.
 
 ---
 
 ## States
 
-A **state** represents a specific situation or mode your system can be in. Think of states like “Idle,” “Processing,” or “Error.” At any point during execution, your system is in one or more active states, depending on whether you’re modeling simple logic or more complex concurrent behavior.
+A **state** represents a specific situation or mode your system can be in. Think of states like "Idle," "Processing," or "Error." At any point during execution, your system is in one or more active states, depending on whether you're modeling simple logic or more complex concurrent behavior.
 
 States are not just passive flags—they can do work. You can define actions that run when:
 - A state is **entered**
@@ -105,7 +110,7 @@ There are two kinds:
 - **Incoming events** are raised by the outside world to tell the statechart something happened (e.g. a button was clicked).
 - **Outgoing events** are raised by the statechart itself to signal something to the outside (e.g. an operation finished or an error occurred).
 
-You can also use **timed events** (like “after 3 seconds”) and **pseudo-events** (like “always” or “on every cycle”) to express more complex behavior.
+You can also use **timed events** (like "after 3 seconds") and **pseudo-events** (like "always" or "on every cycle") to express more complex behavior.
 
 Events can optionally carry a **payload**—a value that adds more context. For example, a `buttonClicked` event might carry the ID of the button that was pressed.
 
@@ -123,7 +128,7 @@ This order matters. It ensures that the system cleans up its old state before re
 
 ### Example
 
-Let’s say you're in a state called `Idle`, and when the user presses a button (`buttonPressed`), you transition to a state called `Running`. Here’s what might happen:
+Let's say you're in a state called `Idle`, and when the user presses a button (`buttonPressed`), you transition to a state called `Running`. Here's what might happen:
 - `Idle` state's exit action resets a timer.
 - The transition assigns a value to a variable.
 - `Running` state's entry action starts a motor.
@@ -139,16 +144,16 @@ States, transitions, and events are the foundation of any statechart. They allow
 - Easy to test
 - Easy to extend
 
-As you model more complex systems, these simple concepts remain the same. You’ll just add more structure—like nested states or parallel regions—to manage complexity.
+As you model more complex systems, these simple concepts remain the same. You'll just add more structure—like nested states or parallel regions—to manage complexity.
 
-But at its core, it’s still all about answering:
+But at its core, it's still all about answering:
 - Where are we now? (**State**)
 - What just happened? (**Event**)
 - What should we do about it? (**Transition**)
 
 # Chapter 3: Variables – Giving Your Statechart a Memory
 
-Statecharts become truly powerful when they can *remember* things — and that’s exactly what variables allow them to do.
+Statecharts become truly powerful when they can *remember* things — and that's exactly what variables allow them to do.
 
 With variables, your statechart can:
 - Count how many times something happened
@@ -183,7 +188,7 @@ Most statechart languages support standard data types, such as:
 | `real`    | `3.14`, `2.0`    | Decimal numbers                   |
 | `string`  | `"hello"`        | Text                              |
 
-In a strongly typed environment, each variable has a fixed type, and type safety is enforced at design time. This means you can’t assign a `string` to an `integer`, for example.
+In a strongly typed environment, each variable has a fixed type, and type safety is enforced at design time. This means you can't assign a `string` to an `integer`, for example.
 
 ---
 
@@ -225,7 +230,7 @@ You can combine variables with arithmetic, logical operations, and conditional e
 
 ## Example: A Simple Switch Counter
 
-Let’s say we have a light that toggles between `On` and `Off`, and we want to count how many times the light was turned on.
+Let's say we have a light that toggles between `On` and `Off`, and we want to count how many times the light was turned on.
 
 ```text
 // Variable declaration
@@ -282,11 +287,11 @@ As a rule of thumb:
 
 > If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
 
-In the next chapter, we’ll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
+In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
 
 # Chapter 4: Composite States – Organizing Behavior with Hierarchy
 
-As your statechart grows, you’ll likely end up with more and more states. Things can get messy fast — diagrams become hard to read, logic gets harder to follow, and reuse becomes difficult.
+As your statechart grows, you'll likely end up with more and more states. Things can get messy fast — diagrams become hard to read, logic gets harder to follow, and reuse becomes difficult.
 
 This is where **composite states** come in. They let you group related states together into one logical unit and build **hierarchical** statecharts that scale much better as complexity increases.
 
@@ -328,7 +333,7 @@ When the composite state is exited:
 Every composite state must define **how it should be entered**.
 
 There are two kinds of entry points:
-- **Default entry point**: the standard starting point (like UML’s initial state)
+- **Default entry point**: the standard starting point (like UML's initial state)
 - **Named entry points**: custom entry paths that allow more flexible control flow
 
 Named entry points are especially useful when the same composite state should behave differently depending on how it is entered.
@@ -370,7 +375,7 @@ Composite states give your statecharts **structure**, **clarity**, and **scalabi
 - Control how behavior begins and ends using **entry** and **exit** points
 - Model modes and processes in a clear and reusable way
 
-In the next chapter, we’ll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.
+In the next chapter, we'll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.
 
 # Chapter 5: Orthogonal States – Modeling Concurrency Cleanly
 
@@ -387,7 +392,7 @@ An **orthogonal state** is essentially a composite state that contains **multipl
 > Important: **Orthogonal states are not true parallel execution.**  
 > They are evaluated **sequentially**, one after another, during each execution cycle.
 
-This design is intentional. Orthogonality is about modeling *logical concurrency*, not multithreading. You don’t have to deal with synchronization, race conditions, or thread safety — you just model separate, independent behaviors that **run side-by-side** from a conceptual point of view.
+This design is intentional. Orthogonality is about modeling *logical concurrency*, not multithreading. You don't have to deal with synchronization, race conditions, or thread safety — you just model separate, independent behaviors that **run side-by-side** from a conceptual point of view.
 
 ---
 
@@ -425,12 +430,12 @@ When an orthogonal state is exited:
 
 ## Synchronization and Coordination
 
-Sometimes you’ll want to coordinate between regions. This can be done using:
+Sometimes you'll want to coordinate between regions. This can be done using:
 - **Events** raised by one region and handled in another
 - **Variables** shared across regions
 - **Exit and entry points** combined with synchronization nodes (in some tools)
 
-This is how orthogonal regions can still collaborate — even though they’re logically separate.
+This is how orthogonal regions can still collaborate — even though they're logically separate.
 
 ---
 
@@ -443,13 +448,13 @@ They help you:
 - Model multiple control flows cleanly
 - Avoid complex nesting by distributing logic across parallel regions
 
-Just remember: orthogonality is **not true parallelism**. It’s a way to think about things happening side by side — while still executing in a **defined, sequential order**.
+Just remember: orthogonality is **not true parallelism**. It's a way to think about things happening side by side — while still executing in a **defined, sequential order**.
 
-In the next chapters, we’ll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox.
+In the next chapters, we'll look at more advanced features like **history states**, **choice nodes**, and **final states**, which add even more power to your modeling toolbox.
 
 # Chapter 6: Final States, Choices, and History – Controlling Flow and Remembering State
 
-As you model more complex behavior in a statechart, you’ll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:
+As you model more complex behavior in a statechart, you'll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:
 
 - **Final states** to indicate completion
 - **Choice nodes** to make conditional decisions
@@ -478,7 +483,7 @@ Final states are different from **exit points**, which are used to leave a compo
 
 A **choice node** is a pseudo-state that lets you branch conditionally after a transition.
 
-Here’s how it works:
+Here's how it works:
 - A transition leads into a choice node
 - Multiple transitions lead out, each with a guard condition
 - The first transition whose guard evaluates to `true` is taken
@@ -534,7 +539,7 @@ These advanced flow control tools give you more flexibility and precision in you
 
 Used correctly, they can make your models more robust, interactive, and user-friendly — especially in systems where users pause, resume, retry, or take different paths based on conditions.
 
-In the next chapter, we’ll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
+In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
 
 # Chapter 7: Summary and Next Steps
 
@@ -542,9 +547,9 @@ Congratulations! You've now worked through the foundational concepts of modern s
 
 ---
 
-## What You’ve Learned
+## What You've Learned
 
-Here’s a quick recap of what we’ve covered:
+Here's a quick recap of what we've covered:
 
 - **Chapter 1: What is a State Machine?**  
   You learned the core idea of modeling behavior as a set of states and transitions triggered by events.
@@ -568,7 +573,7 @@ Here’s a quick recap of what we’ve covered:
 
 ## Why This Matters
 
-Statecharts aren’t just an academic tool — they’re practical, scalable, and designed to make complex behavior **easier to understand** and **easier to build**.
+Statecharts aren't just an academic tool — they're practical, scalable, and designed to make complex behavior **easier to understand** and **easier to build**.
 
 Used correctly, they help you:
 - Make requirements visual and precise
@@ -578,9 +583,9 @@ Used correctly, they help you:
 
 ---
 
-## What’s Next?
+## What's Next?
 
-Now that you've learned the theory, it’s time to get your hands dirty. Try modeling a real system — something from your work, a UI flow, or a home automation process. Start simple, then grow complexity with hierarchy, concurrency, and history when needed.
+Now that you've learned the theory, it's time to get your hands dirty. Try modeling a real system — something from your work, a UI flow, or a home automation process. Start simple, then grow complexity with hierarchy, concurrency, and history when needed.
 
 You might also explore:
 - Simulation and testing of statecharts
