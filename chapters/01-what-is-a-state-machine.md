@@ -7,9 +7,12 @@ State machines are one of those concepts that sound more complicated than they r
 
 The good news? You don't need a PhD in computer science to understand or use state machines. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems. They're especially useful for reactive systems—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
 
----
+Once you start using state machines, you'll realize they're not some abstract, academic concept—they're a practical and readable way to design systems that respond to real-world events.
 
-## A Simple Explanation
+In the next chapters, we'll explore how to model richer behavior using powerful concepts like hierarchy, modes, conditions, and events—without getting lost in theory.
+
+Let's keep it simple, visual, and focused on solving real problems.
+
 
 At their core, state machines are made up of **states** and **transitions**.
 
@@ -24,7 +27,11 @@ Let's take a very basic example: a light switch.
 
  <iframe src="https://play.itemis.io?model=7ec86474-66d1-4cca-bb60-6f7d91e9601d" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
-We can model the switch with two states:
+
+> [!TIP]
+> You can use the [itemis CREATE Player](https://create.itemis.io) to interactively simulate your statechart. Watching your model run step-by-step is one of the best ways to understand its execution semantics and behavior.
+
+We model the switch with two states:
 - `On`
 - `Off`
 
@@ -34,8 +41,6 @@ And one input:
 If the light is `Off` and the button is pressed, we transition to `On`. Press it again, we go back to `Off`.
 
 This might look like overkill for a simple light, but the moment you want to add brightness levels, timers, motion sensors, or modes like "night mode," you'll quickly realize the value of modeling behavior cleanly.
-
----
 
 ## Why Use State Machines?
 
@@ -48,16 +53,8 @@ Some real-world uses include:
 - Game development (e.g. AI state control)
 - Workflow engines
 
-State machines also make it easier to simulate, test, and even generate code for your system—especially when using tools like [itemis CREATE](https://www.itemis.com/en/yakindu/state-machine/), which let you model, simulate, and export code for your charts.
+State machines also make it easier to simulate, test, and even generate code for your system — especially when using tools like [itemis CREATE](https://www.itemis.com/en/yakindu/state-machine/), which let you model, simulate, and export code for your charts for different target platforms like C/C++, Java or Python.
 
 ---
-
-## State Machines Aren't Scary
-
-Once you start using state machines, you'll realize they're not some abstract, academic concept—they're a practical and readable way to design systems that respond to real-world events.
-
-In the next chapters, we'll explore how to model richer behavior using powerful concepts like hierarchy, modes, conditions, and events—without getting lost in theory.
-
-Let's keep it simple, visual, and focused on solving real problems.
 
 Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](02-states-transitions-and-events.md) 
