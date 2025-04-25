@@ -36,10 +36,8 @@ minima:
   social_links:
     - title: GitHub
       icon: github
-      url: https://github.com/amuelder/learning
-    - title: Twitter
-      icon: x-twitter
-      url: https://twitter.com/amuelder
+      url: https://github.com/andreasmuelder/learning
+
 
 # Exclude from processing
 exclude:
@@ -51,4 +49,4 @@ exclude:
   - assets
 
 # Redirect root to first chapter
-permalink: /chapters/01-what-is-a-state-machine.html 
+permalink: learning/chapters/01-what-is-a-state-machine.html 
