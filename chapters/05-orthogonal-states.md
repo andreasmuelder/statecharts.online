@@ -1,5 +1,6 @@
 ---
 title: Orthogonal States – Modeling Concurrency Cleanly
+layout: chapter
 ---
 
 # Chapter 5: Orthogonal States – Modeling Concurrency Cleanly

@@ -1,5 +1,6 @@
 ---
 title: What is a State Machine?
+layout: chapter
 ---
 
 # What is a State Machine?

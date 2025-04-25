@@ -1,5 +1,6 @@
 ---
 title: States, Transitions, and Events
+layout: chapter
 ---
 
 # Chapter 2: States, Transitions, and Events

@@ -1,12 +1,26 @@
 title: The Pragmatic Guide to State Machines
 description: A practical guide to understanding and implementing state machines in software development
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  skin: classic
+  date_format: "%b %-d, %Y"
+  social_links:
+    - title: GitHub
+      icon: github
+      url: https://github.com/amuelder/learning
+    - title: Twitter
+      icon: x-twitter
+      url: https://twitter.com/amuelder
 
 # Exclude from processing
 exclude:

@@ -1,5 +1,6 @@
 ---
 title: Final States, Choices, and History – Controlling Flow and Remembering State
+layout: chapter
 ---
 
 # Chapter 6: Final States, Choices, and History – Controlling Flow and Remembering State

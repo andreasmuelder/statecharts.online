@@ -1,5 +1,6 @@
 ---
 title: Composite States – Organizing Behavior with Hierarchy
+layout: chapter
 ---
 
 # Chapter 4: Composite States – Organizing Behavior with Hierarchy

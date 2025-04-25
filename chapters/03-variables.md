@@ -1,5 +1,6 @@
 ---
 title: Variables – Giving Your Statechart a Memory
+layout: chapter
 ---
 
 # Chapter 3: Variables – Giving Your Statechart a Memory

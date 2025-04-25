@@ -1,5 +1,6 @@
 ---
 title: Summary and Next Steps
+layout: chapter
 ---
 
 # Chapter 7: Summary and Next Steps
