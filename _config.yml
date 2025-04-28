@@ -10,11 +10,16 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # SEO Settings
 author: Andreas Muelder
 lang: en
 timezone: UTC
+url: "https://statecharts.online" # Replace with your actual domain
+baseurl: "" # Leave empty if your site is at the root
+keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling, finite state machine, FSM, state management"
+google_analytics: G-NE5DVSYWNN
 
 # Default front matter
 defaults:
@@ -24,9 +29,10 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      author: "Your Name"
+      author: "Andreas Muelder"
       description: "A practical guide to understanding and implementing state machines in software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
+      image: "/assets/images/og-image.jpg"
 
 # Minima theme settings
 minima:
