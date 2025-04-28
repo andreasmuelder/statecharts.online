@@ -1,0 +1,85 @@
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <div class="cookie-consent-buttons">
+            <a href="/privacy-policy" class="cookie-consent-learn-more">Learn more</a>
+            <button id="cookie-consent-accept" class="cookie-consent-accept">Got it!</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f8f9fa;
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cookie-consent p {
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.cookie-consent-learn-more {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+.cookie-consent-learn-more:hover {
+    text-decoration: underline;
+}
+
+.cookie-consent-accept {
+    background: #2a7ae2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cookie-consent-accept:hover {
+    background: #1756a9;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptButton = document.getElementById('cookie-consent-accept');
+    
+    // Check if user has already accepted cookies
+    if (!localStorage.getItem('cookieConsent')) {
+        cookieConsent.style.display = 'block';
+    }
+    
+    // Handle accept button click
+    acceptButton.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'true');
+        cookieConsent.style.display = 'none';
+    });
+});
+</script> 
