@@ -28,10 +28,18 @@ Orthogonal states are ideal when:
 - You want to avoid tangled logic by splitting responsibilities across regions
 
 Examples:
-- In a smart home system, one region controls the lights, another handles heating.
+- In a smart home system, one region controls the fan, another handles the temperature.
 - In a vehicle, one region manages cruise control, another handles lane keeping.
 
 Each part has its own logic, but they run **together** as long as the parent orthogonal state is active.
+
+---
+
+## Example: Smart Home Temperature and Fan Control
+
+This statechart represents a system with two independent control mechanisms: one for temperature and one for fan operation. Each control mechanism can toggle between two states based on specific events (toggleTemp and toggleFan). The use of orthogonal regions allows the temperature and fan controls to operate independently, reflecting a design where both systems can be managed concurrently without interference.
+
+ <iframe src="https://play.itemis.io?model=3d020105-46b4-4572-9be6-8883cf13aad2" width="100%" height="800px" style="border: 1px solid" allowfullscreen></iframe>
 
 ---
 
