@@ -12,7 +12,7 @@ plugins:
   - jekyll-seo-tag
 
 # SEO Settings
-author: Your Name
+author: Andreas Muelder
 lang: en
 timezone: UTC
 
