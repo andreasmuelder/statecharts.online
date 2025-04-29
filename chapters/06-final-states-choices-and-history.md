@@ -9,6 +9,11 @@ As you model more complex behavior in a statechart, you'll need additional tools
 - **Choice nodes** to make conditional decisions
 - **History states** to remember previously active states
 
+
+ <iframe src="https://play.itemis.io?model=087929ff-7093-4493-9421-4c253c13a672" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
+
+
+
 ---
 
 ## Final States – Marking the End of a Flow

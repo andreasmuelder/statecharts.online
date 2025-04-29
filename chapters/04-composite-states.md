@@ -44,30 +44,6 @@ Composite states allow the statechart to be broken down into smaller, more manag
 
 ---
 
-## Entry Points
-
-Every composite state must define **how it should be entered**.
-
-There are two kinds of entry points:
-- **Default entry point**: the standard starting point (like UML's initial state)
-- **Named entry points**: custom entry paths that allow more flexible control flow
-
-Named entry points are especially useful when the same composite state should behave differently depending on how it is entered.
-
----
-
-## Exit Points
-
-Just like entries define how a composite state begins, **exit points** define how it ends. An exit point is a special marker that signals the end of execution for that composite state — and allows the outer statechart to respond accordingly.
-
-There are two types of exit points:
-- **Default exit point**: used for general exits
-- **Named exit points**: allow different transitions to be triggered depending on how the composite state finishes
-
-This allows for powerful and clear branching logic. For example, a composite state handling a process might exit with a different label depending on whether the result was a success or a failure. The outer statechart can then continue accordingly.
-
----
-
 ## Summary
 
 Composite states give your statecharts **structure**, **clarity**, and **scalability**. They help you:
