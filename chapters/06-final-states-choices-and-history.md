@@ -1,5 +1,5 @@
 ---
-title: History, Choices and the final State – Controlling Flow and Remembering State
+title: History, Choices and the Final State – Controlling Flow and Remembering State
 layout: chapter
 ---
 
