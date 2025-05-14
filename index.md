@@ -2,7 +2,7 @@
 title: The Pragmatic Guide to State Machines
 ---
 
-Welcome to *The Pragmatic Guide to State Machines*! This guide will take you from the basics of state machines to advanced modeling techniques, all while keeping things practical and focused on real-world applications.
+Welcome to *The Pragmatic Guide to State Machines*! This guide will take you from the basics of state machines to advanced modeling techniques.
 
 ## About This Guide
 
