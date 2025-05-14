@@ -71,7 +71,7 @@ As you model more complex systems, these simple concepts remain the same. You'll
 
 But at its core, it's still all about answering:
 - Where are we now? (**State**)
-- What just happened? (**Event**)
-- What should we do about it? (**Transition**)
+- What led to us being here? (**Event**)
+- What options do we have now? (**Transition**)
 
 Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md) 

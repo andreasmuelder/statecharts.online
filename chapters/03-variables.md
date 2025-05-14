@@ -72,7 +72,7 @@ Let's say we have a light that toggles between `On` and `Off`, and we want to co
 
 This statechart models a simple light switch mechanism with two states: On and Off. It utilizes two variables, isOn and counter, to manage the state transitions and track the number of times the light is turned on.
 
-Each time the light is turned on, the counter increases. When entering the `On` state, the `entry` action increases the variable `counter`. When the `buttonPressed` event is raised, the transition effect set the variable `isOn` to true or false. 
+Each time the light is turned on, the counter increases. When entering the `On` state, the `entry` action increases the variable `counter`. When the `buttonPressed` event is raised, the transition sets the variable `isOn` to true or false. 
 
 ---
 

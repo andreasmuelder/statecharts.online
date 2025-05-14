@@ -1,4 +1,4 @@
-# Chapter 8: Implementation Strategies for State Machines
+# Chapter 7: Implementation Strategies for State Machines
 
 Once you've modeled your statechart, the next step is bringing it to life: **implementing** it as real, executable software.  
 There are several strategies to do this — each with their own strengths, weaknesses, and typical use cases.
@@ -22,7 +22,7 @@ Code-only implementations don’t rely on any external libraries. They are fast,
 
 ### Switch/Case Implementation
 
-The most common and classic approach, it looks like this in `C` code:
+The most common and classic approach looks like this in `C` code:
 
 ```c
 enum State { Off, On } state = Off;

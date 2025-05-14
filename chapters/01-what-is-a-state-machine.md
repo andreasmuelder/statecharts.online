@@ -1,5 +1,5 @@
 ---
-title: What is a State Machine?
+title: What are Statecharts and State Machines?
 layout: chapter
 ---
 
