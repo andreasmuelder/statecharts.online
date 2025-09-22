@@ -1,20 +1,3 @@
----
-title: The Pragmatic Guide to State Machines
-faqs:
-  - question: The Pragmatic Guide to State Machines - What is this guide about?
-    answer: >
-      A practical introduction to state machines and statecharts with interactive
-      examples to build intuition and real-world skills.
-  - question: The Pragmatic Guide to State Machines - How should I use this guide?
-    answer: >
-      Start at Chapter 1 and proceed in order. Try the embedded simulations and
-      apply concepts to your own projects.
-  - question: Where can I try statemachines interactively?
-    answer: >
-      Use the embedded itemis CREATE Player to simulate models step-by-step in
-      your browser.
----
-
 Welcome to *The Pragmatic Guide to State Machines*! This guide will take you from the basics of state machines to advanced modeling techniques.
 
 ## About This Guide
