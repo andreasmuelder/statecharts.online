@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Only expose sitemap in production when site.url is configured
+{% if jekyll.environment == "production" and site.url %}
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+{% endif %}
+
