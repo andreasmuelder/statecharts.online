@@ -1,5 +1,5 @@
 ---
-title: Orthogonal States – Modeling Concurrency Cleanly
+title: Orthogonal States in Statecharts – Modeling Parallel Behavior and Concurrency
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter

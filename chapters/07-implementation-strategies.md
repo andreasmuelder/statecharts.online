@@ -1,5 +1,5 @@
 ---
-title: Implementation Strategies for State Machines
+title: State Machine Implementation Strategies – Code Patterns and Best Practices
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter

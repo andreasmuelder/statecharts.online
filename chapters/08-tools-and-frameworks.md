@@ -1,5 +1,5 @@
 ---
-title: Tools and Frameworks for State Machines
+title: Best State Machine Tools and Frameworks – Libraries and Modeling Software
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter

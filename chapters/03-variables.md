@@ -1,5 +1,5 @@
 ---
-title: Variables – Giving Your Statechart a Memory
+title: Variables in State Machines – Adding Memory and Logic to Statecharts
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter

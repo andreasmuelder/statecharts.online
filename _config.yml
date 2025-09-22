@@ -1,8 +1,8 @@
-title: A Pragmatic Guide to Statecharts and State Machines
+title: The Complete Guide to State Machines and Statecharts | Learn Implementation Patterns
 email: muelder@itemis.de
 description: >-
-  A practical guide to understanding and implementing state machines in software development.
-  Learn from basics to advanced concepts with real-world examples.
+  Master state machines and statecharts with this comprehensive guide. Learn implementation strategies,
+  design patterns, and practical examples for building reactive systems in software development.
 
 # Build settings
 markdown: kramdown
@@ -18,7 +18,7 @@ lang: en
 timezone: Europe/Berlin
 url: "https://statecharts.online"
 baseurl: "" # Leave empty if your site is at the root
-keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling, finite state machine, FSM, state management"
+keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling, finite state machine, FSM, state management, reactive programming, event-driven, behavior modeling, software architecture, system design"
 google_analytics: G-NE5DVSYWNN
 
 # Default front matter
@@ -30,7 +30,7 @@ defaults:
     values:
       layout: "default"
       author: "Andreas Mülder"
-      description: "A practical guide to understanding and implementing state machines in software development"
+      description: "Master state machines and statecharts with practical examples, implementation strategies, and real-world design patterns for software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
   -
