@@ -11,6 +11,8 @@ layout: default
     {{ content }}
   </div>
 
+  {%- include faq.html -%}
+
   <div class="post-navigation">
     {% if page.previous %}
       <a href="{{ page.previous.url | relative_url }}" class="prev">&laquo; {{ page.previous.title }}</a>
