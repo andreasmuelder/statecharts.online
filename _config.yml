@@ -13,7 +13,7 @@ plugins:
   - jekyll-sitemap
 
 # SEO Settings
-author: Andreas Muelder
+author: Andreas Mülder
 lang: en
 timezone: UTC
 url: "https://statecharts.online" # Replace with your actual domain
@@ -29,7 +29,7 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      author: "Andreas Muelder"
+      author: "Andreas Mülder"
       description: "A practical guide to understanding and implementing state machines in software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
