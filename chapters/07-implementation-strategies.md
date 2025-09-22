@@ -276,4 +276,4 @@ By understanding the trade-offs, you can choose the right approach and build rel
 
 ---
 
-Ready to continue? Head over to [Chapter 8: Summary and Next Steps](08-summary-and-next-steps.md) 
+Ready to continue? Head over to [Chapter 8: Tools and Frameworks](08-tools-and-frameworks.md) and then to the [Summary and Next Steps](09-summary-and-next-steps.md) 

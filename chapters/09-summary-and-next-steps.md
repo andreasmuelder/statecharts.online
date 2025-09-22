@@ -47,11 +47,14 @@ Here's a quick recap of what we've covered:
 - **Chapter 7: Code Implementation Strategies**  
   You learned how to implement statemachines in code with different implementation strategies and common frameworks.
 
+- **Chapter 8: Tools and Frameworks**  
+  You explored practical libraries, engines, and modeling tools, with criteria to choose the right one.
+
 ---
 
 ## Why This Matters
 
-Statecharts aren't just an academic tool — they're practical, scalable, and designed to make complex behavior **easier to understand** and **easier to build**.
+Statecharts aren't just an academic tool — they're practical, scalable, and designed to make complex behavior easier to understand and easier to build.
 
 Used correctly, they help you:
 - Make requirements visual and precise
@@ -96,3 +99,5 @@ And most of all: enjoy the journey.
 Happy modeling!
 
 ---
+
+
