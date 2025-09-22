@@ -108,4 +108,13 @@ Used correctly, they can make your models more robust, interactive, and user-fri
 
 In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
 
+---
+
+{%- include faq.html -%}
+
+---
+
+
 Ready to continue? Head over to [Chapter 7: Implementation Strategies](07-implementation-strategies.md) 
+
+[Back to top](#top)

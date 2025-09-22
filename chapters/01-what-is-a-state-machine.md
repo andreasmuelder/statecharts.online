@@ -82,4 +82,11 @@ State machines also make it easier to simulate, test, and even generate code for
 
 ---
 
+{%- include faq.html -%}
+
+---
+
+
 Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](02-states-transitions-and-events.md) 
+
+[Back to top](#top)

@@ -102,7 +102,15 @@ They help you:
 > [!TIP]
 > If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
 
+---
+
+{%- include faq.html -%}
+
+---
+
 
 In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
 
 Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](04-composite-states.md) 
+
+[Back to top](#top)

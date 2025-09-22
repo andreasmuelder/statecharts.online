@@ -97,4 +97,13 @@ But at its core, it's still all about answering:
 - What led to us being here? (**Event**)
 - What options do we have now? (**Transition**)
 
+---
+
+{%- include faq.html -%}
+
+---
+
+
 Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md) 
+
+[Back to top](#top)

@@ -95,6 +95,14 @@ SCXML is a W3C standard for state charts. Engines exist across platforms (e.g., 
 
 The right tool depends on your context: platform and language needs, required statechart features, workflow and collaboration tooling, and operational fit for CI and licensing. Use the quick checklist to shortlist candidates, then prototype a core flow to validate ergonomics and integration. When in doubt, favor clarity, testability, and interoperability.
 
+---
+
+{%- include faq.html -%}
+
+---
+
+
 Ready to wrap up? Head back to [Summary and Next Steps](09-summary-and-next-steps.md).
 
 
+[Back to top](#top)

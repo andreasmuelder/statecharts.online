@@ -88,6 +88,11 @@ To apply your knowledge and explore further, consider using [itemis CREATE](http
 
 ---
 
+{%- include faq.html -%}
+
+---
+
+
 ## Final Thoughts
 
 The power of statecharts lies in their clarity. They help you think better about behavior — and that alone makes them worth learning.
@@ -98,6 +103,8 @@ And most of all: enjoy the journey.
 
 Happy modeling!
 
----
+[Back to top](#top)
+
+
 
 
