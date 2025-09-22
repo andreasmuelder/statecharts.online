@@ -23,8 +23,7 @@ google_analytics: G-NE5DVSYWNN
 
 # Default front matter
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -33,8 +32,7 @@ defaults:
       description: "Master state machines and statecharts with practical examples, implementation strategies, and real-world design patterns for software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
-  -
-    scope:
+  - scope:
       path: "chapters"
       type: "pages"
     values:
@@ -49,7 +47,6 @@ minima:
     - title: GitHub
       icon: github
       url: https://statecharts.online
-
 
 # Exclude from processing
 exclude:
