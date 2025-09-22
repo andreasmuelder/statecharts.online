@@ -17,8 +17,6 @@ faqs:
       itemis CREATE provides free academic licenses; libraries are often open source. Verify current terms on vendor and project sites.
 ---
 
-# Chapter 8: Tools and Frameworks for State Machines
-
 Choosing the right tooling can accelerate development, improve reliability, and make complex behavior easier to manage. This chapter highlights widely used libraries, runtimes, and modeling tools you can apply in different contexts. When evaluating options, consider your target platforms and languages, the feature set you actually need (hierarchy, orthogonal regions, timers, history, and a data model), and the quality of tooling for everyday work such as visual debugging, validation, testing, and code generation. Interoperability also matters: support for standards like SCXML, the ability to integrate with handwritten code and existing build systems, and collaboration features such as version control integration and model diff/merge can greatly influence team workflows. Finally, look at operational fit: ease of CI/CD and headless automation, performance and footprint for your runtime environment, licensing and add‑on requirements, and the learning curve for cross‑functional teams.
 
 ---

@@ -21,8 +21,6 @@ faqs:
       like SCXML.
 ---
 
-# Chapter 7: Implementation Strategies for State Machines
-
 Once you've modeled your statechart, the next step is bringing it to life: **implementing** it as real, executable software.  
 There are several strategies to do this — each with their own strengths, weaknesses, and typical use cases.
 
