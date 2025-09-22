@@ -15,8 +15,8 @@ plugins:
 # SEO Settings
 author: Andreas Mülder
 lang: en
-timezone: UTC
-url: "https://statecharts.online" # Replace with your actual domain
+timezone: Europe/Berlin
+url: "https://statecharts.online"
 baseurl: "" # Leave empty if your site is at the root
 keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling, finite state machine, FSM, state management"
 google_analytics: G-NE5DVSYWNN
