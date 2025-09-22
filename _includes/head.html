@@ -3,11 +3,6 @@
 
 {% seo %}
 
-{%- comment -%}
-Force og:type to article for chapter pages
-{%- endcomment -%}
-{%- if page.layout == 'chapter' or page.path contains 'chapters/' -%}
-<meta property="og:type" content="article">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -16,7 +11,7 @@ Force og:type to article for chapter pages
     {
       "@type": "ListItem",
       "position": 1,
-      "name": {{ site.title | jsonify }},
+      "name": "Home",
       "item": {{ '/' | absolute_url | jsonify }}
     },
     {
