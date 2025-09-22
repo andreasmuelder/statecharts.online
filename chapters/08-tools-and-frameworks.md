@@ -31,6 +31,7 @@ Choosing the right tooling can accelerate development, improve reliability, and 
 - Ensure CI readiness: headless execution, license model for build agents.
 - Weigh learning curve and total cost (including required add-ons).
 
+---
 ## Modeling and Code Generation Tools
 
 This section lists representative options rather than a complete catalog; use it as a starting point and verify current capabilities for your needs.
@@ -62,7 +63,7 @@ Note: Details are summarized from the provided material and vendor documentation
 
 ---
 
-## Statemachine and Runtime Frameworks (by Ecosystem)
+## Statemachine Frameworks (by Ecosystem)
 
 ### Java / JVM
 - [Spring Statemachine](https://spring.io/projects/spring-statemachine): Mature framework with hierarchical states, regions, guards, actions, events, and persistence.
