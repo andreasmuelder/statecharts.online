@@ -9,10 +9,14 @@ Add explicit license information via JSON-LD. This complements jekyll-seo-tag ou
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "{{ page.seo.type | default: 'WebPage' }}",
+  "@type": "CreativeWork",
   "@id": "{{ page.url | absolute_url }}",
   "url": "{{ page.url | absolute_url }}",
-  "license": "https://creativecommons.org/licenses/by/4.0/"
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {
+    "@type": "Article",
+    "@id": "{{ page.url | absolute_url }}"
+  }
 }
 </script>
 
