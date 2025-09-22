@@ -4,20 +4,6 @@ date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
 description: A recap of key concepts with suggestions for hands-on practice, tools, and where to go next.
-faqs:
-  - question: What are the key takeaways from this guide?
-    answer: >
-      Model behavior with states and transitions, use hierarchy and orthogonal
-      regions to manage complexity, and leverage variables, choice, history, and
-      final states for precise control.
-  - question: How can I practice statecharts next?
-    answer: >
-      Model a real system and simulate it with tools like itemis CREATE. Start
-      simple and add hierarchy, concurrency, and history as needed.
-  - question: Can I generate code from statecharts?
-    answer: >
-      Yes. Tools like itemis CREATE generate code for languages such as C/C++,
-      Java, and Python.
 ---
 
 Congratulations! You've now worked through the foundational concepts of modern statecharts — from the basics to more advanced modeling techniques. Whether you're building embedded systems, user interfaces, automation logic, or reactive workflows, statecharts offer a powerful, visual, and maintainable way to model behavior.
@@ -89,11 +75,6 @@ To apply your knowledge and explore further, consider using [itemis CREATE](http
 - **Comprehensive Documentation**: Learn more through the [itemis CREATE Documentation](https://www.itemis.com/en/products/itemis-create/documentation/user-guide).
 
 ---
-
-{%- include faq.html -%}
-
----
-
 
 ## Final Thoughts
 
