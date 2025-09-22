@@ -4,9 +4,9 @@
   <div class="faq-items">
     {% for item in page.faqs %}
     <div class="faq-item">
-      <h3 class="faq-question">Q: {{ item.question }}</h3>
+      <h4 class="faq-question">{{ item.question }}</h4>
       <div class="faq-answer">
-        A: {{ item.answer | markdownify }}
+        {{ item.answer | markdownify }}
       </div>
     </div>
     {% endfor %}
