@@ -33,6 +33,13 @@ defaults:
       description: "A practical guide to understanding and implementing state machines in software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
+  -
+    scope:
+      path: "chapters"
+      type: "pages"
+    values:
+      seo:
+        type: "Article"
 
 # Minima theme settings
 minima:
