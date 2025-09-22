@@ -1,6 +1,7 @@
 ---
 title: States, Transitions, and Events
 layout: chapter
+description: Understand the core building blocks of statecharts — states, transitions, and events — and how they define behavior and flow.
 ---
 
 At the heart of every statechart are **states**, **transitions**, and **events**. These core elements describe how your system behaves, how it reacts, and how it evolves over time in response to inputs. Let's break them down step by step.

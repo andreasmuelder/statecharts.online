@@ -1,6 +1,7 @@
 ---
 title: History, Choices and the Final State – Controlling Flow and Remembering State
 layout: chapter
+description: Master final states, choice nodes, and history to control flow and resume behavior where it left off.
 ---
 
 As you model more complex behavior in a statechart, you'll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:

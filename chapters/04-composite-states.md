@@ -1,6 +1,7 @@
 ---
 title: Composite States – Organizing Behavior with Hierarchy
 layout: chapter
+description: Use composite states to structure complex behavior with hierarchy, keeping large statecharts readable and maintainable.
 ---
 
 As your statechart grows, you'll likely end up with more and more states. Things can get messy fast — diagrams become hard to read, logic gets harder to follow, and reuse becomes difficult.

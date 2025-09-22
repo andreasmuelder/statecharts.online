@@ -1,3 +1,9 @@
+---
+title: Implementation Strategies for State Machines
+layout: chapter
+description: Compare code-only, library, and interpreter approaches for implementing state machines, with pros, cons, and examples.
+---
+
 # Chapter 7: Implementation Strategies for State Machines
 
 Once you've modeled your statechart, the next step is bringing it to life: **implementing** it as real, executable software.  

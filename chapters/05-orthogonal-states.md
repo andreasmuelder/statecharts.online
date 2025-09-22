@@ -1,6 +1,7 @@
 ---
 title: Orthogonal States – Modeling Concurrency Cleanly
 layout: chapter
+description: Model logical concurrency with orthogonal regions to run independent behaviors side-by-side without threads.
 ---
 
 In real-world systems, things often happen at the same time — or at least, independently. For example, a washing machine might be heating water while spinning the drum. A robot might be tracking its position while checking for obstacles.

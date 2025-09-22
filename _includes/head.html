@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+
+<link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+{%- comment -%}
+Structured data (JSON-LD) for chapter pages to help search and AI systems
+{%- endcomment -%}
+{% if page.url and page.url contains '/chapters/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | default: site.title | jsonify }},
+  "description": {{ page.description | default: site.description | strip_newlines | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": "Andreas Mülder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Statecharts Online"
+  },
+  "url": "{{ page.url | absolute_url }}",
+  "datePublished": "{{ page.date | default: site.time | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | default: site.time | date_to_xmlschema }}"
+  
+}
+</script>
+{% endif %}
+

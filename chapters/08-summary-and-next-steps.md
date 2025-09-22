@@ -1,6 +1,7 @@
 ---
 title: Summary and Next Steps
 layout: chapter
+description: A recap of key concepts with suggestions for hands-on practice, tools, and where to go next.
 ---
 
 Congratulations! You've now worked through the foundational concepts of modern statecharts — from the basics to more advanced modeling techniques. Whether you're building embedded systems, user interfaces, automation logic, or reactive workflows, statecharts offer a powerful, visual, and maintainable way to model behavior.

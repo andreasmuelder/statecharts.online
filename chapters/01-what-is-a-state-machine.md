@@ -1,6 +1,7 @@
 ---
 title: What are Statecharts and State Machines?
 layout: chapter
+description: A friendly introduction to state machines and statecharts with practical motivation and a simple example to build intuition.
 ---
 
 State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they're often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That's enough to scare off anyone who's just trying to build software that works.

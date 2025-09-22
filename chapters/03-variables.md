@@ -1,6 +1,7 @@
 ---
 title: Variables – Giving Your Statechart a Memory
 layout: chapter
+description: Learn how variables add memory and intelligence to statecharts, enabling guards, actions, and richer decision logic.
 ---
 
 Statecharts become truly powerful when they can *remember* things — and that's exactly what variables allow them to do.
