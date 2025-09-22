@@ -46,7 +46,7 @@ faqs:
       "name": {{ item.question | strip_newlines | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ item.answer | markdownify | strip_newlines | strip | jsonify }}
+        "text": {{ item.answer | markdownify | strip_html | strip_newlines | strip | jsonify }}
       }
     }{% if forloop.last == false %},{% endif %}
     {% endfor %}
