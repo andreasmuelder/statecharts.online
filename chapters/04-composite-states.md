@@ -1,5 +1,7 @@
 ---
 title: Composite States – Organizing Behavior with Hierarchy
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Use composite states to structure complex behavior with hierarchy, keeping large statecharts readable and maintainable.
 faqs:

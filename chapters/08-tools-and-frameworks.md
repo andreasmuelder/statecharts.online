@@ -1,5 +1,7 @@
 ---
 title: Tools and Frameworks for State Machines
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Overview of popular tools and frameworks for modeling and executing state machines and statecharts across languages and platforms.
 faqs:

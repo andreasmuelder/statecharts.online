@@ -1,5 +1,7 @@
 ---
 title: Orthogonal States – Modeling Concurrency Cleanly
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Model logical concurrency with orthogonal regions to run independent behaviors side-by-side without threads.
 faqs:

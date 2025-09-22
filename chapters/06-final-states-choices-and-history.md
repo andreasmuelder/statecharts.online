@@ -1,5 +1,7 @@
 ---
 title: History, Choices and the Final State – Controlling Flow and Remembering State
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Master final states, choice nodes, and history to control flow and resume behavior where it left off.
 faqs:

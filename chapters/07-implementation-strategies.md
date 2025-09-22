@@ -1,5 +1,7 @@
 ---
 title: Implementation Strategies for State Machines
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Compare code-only, library, and interpreter approaches for implementing state machines, with pros, cons, and examples.
 faqs:

@@ -1,5 +1,7 @@
 ---
 title: States, Transitions, and Events
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Understand the core building blocks of statecharts — states, transitions, and events — and how they define behavior and flow.
 faqs:

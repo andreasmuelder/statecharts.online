@@ -1,5 +1,7 @@
 ---
 title: Summary and Next Steps
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: A recap of key concepts with suggestions for hands-on practice, tools, and where to go next.
 faqs:

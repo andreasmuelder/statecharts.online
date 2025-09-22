@@ -1,5 +1,7 @@
 ---
 title: What are Statecharts and State Machines?
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: A friendly introduction to state machines and statecharts with practical motivation and a simple example to build intuition.
 faqs:

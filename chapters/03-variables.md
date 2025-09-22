@@ -1,5 +1,7 @@
 ---
 title: Variables – Giving Your Statechart a Memory
+date: 2025-09-22
+last_modified_at: 2025-09-22
 layout: chapter
 description: Learn how variables add memory and intelligence to statecharts, enabling guards, actions, and richer decision logic.
 faqs:
