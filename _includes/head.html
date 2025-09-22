@@ -3,6 +3,19 @@
 
 {% seo %}
 
+{%- comment -%}
+Add explicit license information via JSON-LD. This complements jekyll-seo-tag output.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ page.seo.type | default: 'WebPage' }}",
+  "@id": "{{ page.url | absolute_url }}#license",
+  "url": "{{ page.url | absolute_url }}",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
 <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
