@@ -2,6 +2,23 @@
 title: Orthogonal States – Modeling Concurrency Cleanly
 layout: chapter
 description: Model logical concurrency with orthogonal regions to run independent behaviors side-by-side without threads.
+faqs:
+  - question: What are orthogonal states?
+    answer: >
+      Composite states with multiple regions that execute logically in parallel.
+      Each region has its own substates and transitions.
+  - question: Is this true parallel execution?
+    answer: >
+      No. Execution is sequential per cycle. Orthogonality models logical
+      concurrency without threads or synchronization primitives.
+  - question: When should I use orthogonal states?
+    answer: >
+      When modeling independent subsystems that operate side-by-side, such as
+      fan and temperature control in a smart home.
+  - question: How do regions coordinate?
+    answer: >
+      Use events, shared variables, or synchronization mechanisms to communicate
+      between regions as needed.
 ---
 
 In real-world systems, things often happen at the same time — or at least, independently. For example, a washing machine might be heating water while spinning the drum. A robot might be tracking its position while checking for obstacles.

@@ -2,6 +2,19 @@
 title: Variables – Giving Your Statechart a Memory
 layout: chapter
 description: Learn how variables add memory and intelligence to statecharts, enabling guards, actions, and richer decision logic.
+faqs:
+  - question: Why do statecharts need variables?
+    answer: >
+      Variables give memory and context so the model can make decisions based on
+      prior events and current conditions, not just immediate inputs.
+  - question: Where are variables used?
+    answer: >
+      In guards to enable/disable transitions, in actions to update data, and in
+      entry/exit logic to initialize or clean up state.
+  - question: What data types are common?
+    answer: >
+      Booleans, integers, reals, and strings are typical; strongly typed tools
+      enforce type safety at design time.
 ---
 
 Statecharts become truly powerful when they can *remember* things — and that's exactly what variables allow them to do.

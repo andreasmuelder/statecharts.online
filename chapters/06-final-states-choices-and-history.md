@@ -2,6 +2,23 @@
 title: History, Choices and the Final State – Controlling Flow and Remembering State
 layout: chapter
 description: Master final states, choice nodes, and history to control flow and resume behavior where it left off.
+faqs:
+  - question: What is a final state?
+    answer: >
+      A terminal state that marks completion of a state machine or region. When
+      reached, that region stops executing.
+  - question: What is a choice node?
+    answer: >
+      A pseudo-state that branches conditionally; the first outgoing transition
+      whose guard is true is taken, with a default as fallback.
+  - question: What is a history state?
+    answer: >
+      A mechanism to remember the last active substate when leaving a composite
+      state and to resume there upon re-entry. Supports shallow and deep modes.
+  - question: When should I use shallow vs deep history?
+    answer: >
+      Use shallow to remember one level of nesting; use deep to restore the full
+      nested configuration of substates.
 ---
 
 As you model more complex behavior in a statechart, you'll need additional tools to control how execution flows and how the system "remembers" what it was doing. In this chapter, we introduce three important concepts that extend the power of your statecharts:

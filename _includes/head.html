@@ -38,3 +38,58 @@ Structured data (JSON-LD) for chapter pages to help search and AI systems
 </script>
 {% endif %}
 
+
+{%- comment -%}
+FAQ/Q&A structured data (JSON-LD). Add to any page via front matter:
+
+faqs:
+  - question: "What is a state machine?"
+    answer: "A state machine is ..."
+  - question: "How is it used?"
+    answer: "You can use it to ..."
+
+# or for a single Q&A
+qa:
+  question: "What is a state machine?"
+  answer: "A state machine is ..."
+{%- endcomment -%}
+{% if page.faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in page.faqs %}
+    {
+      "@type": "Question",
+      "name": {{ item.question | strip_newlines | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer | markdownify | strip_newlines | strip | jsonify }}
+      }
+    }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.qa %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "QAPage",
+  "mainEntity": {
+    "@type": "Question",
+    "name": {{ page.qa.question | strip_newlines | jsonify }},
+    "text": {{ page.qa.question | strip_newlines | jsonify }},
+    "answerCount": 1,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": {{ page.qa.answer | markdownify | strip_newlines | strip | jsonify }}
+    }
+  }
+}
+</script>
+{% endif %}
+

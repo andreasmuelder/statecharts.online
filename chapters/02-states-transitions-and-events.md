@@ -2,6 +2,28 @@
 title: States, Transitions, and Events
 layout: chapter
 description: Understand the core building blocks of statecharts — states, transitions, and events — and how they define behavior and flow.
+faqs:
+  - question: What is a state in a statechart?
+    answer: >
+      A state is a specific mode or situation the system can be in. States can
+      execute entry, do, and exit actions to react to lifecycle changes.
+  - question: What is a transition?
+    answer: >
+      A transition connects two states and defines when and why the system moves
+      between them, typically triggered by an event and optionally guarded by a
+      condition.
+  - question: What are events?
+    answer: >
+      Events are signals that something happened. They can be incoming, outgoing,
+      or timed; some tools also support pseudo-events like always/every cycle.
+  - question: In what order do actions run during a transition?
+    answer: >
+      First exit actions of the current state, then transition actions, then
+      entry actions of the target state.
+  - question: Can events carry data?
+    answer: >
+      Yes. Events may include payloads that provide context, like an identifier
+      or measurement value.
 ---
 
 At the heart of every statechart are **states**, **transitions**, and **events**. These core elements describe how your system behaves, how it reacts, and how it evolves over time in response to inputs. Let's break them down step by step.

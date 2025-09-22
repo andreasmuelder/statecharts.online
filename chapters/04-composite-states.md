@@ -2,6 +2,23 @@
 title: Composite States – Organizing Behavior with Hierarchy
 layout: chapter
 description: Use composite states to structure complex behavior with hierarchy, keeping large statecharts readable and maintainable.
+faqs:
+  - question: What is a composite state?
+    answer: >
+      A state that contains its own nested region with substates and transitions
+      — effectively a statechart within a state.
+  - question: When should I use composite states?
+    answer: >
+      Use them for multi-step processes, grouping related behavior, and
+      structuring large charts into readable, reusable modules.
+  - question: How do entry and exit behave for composite states?
+    answer: >
+      Entering starts the nested region at its entry point; exiting leaves all
+      active substates before exiting the composite itself.
+  - question: Can composite states model modes?
+    answer: >
+      Yes. Encapsulate mode-specific behavior (e.g., Manual vs MotionSensing)
+      as separate composite states.
 ---
 
 As your statechart grows, you'll likely end up with more and more states. Things can get messy fast — diagrams become hard to read, logic gets harder to follow, and reuse becomes difficult.

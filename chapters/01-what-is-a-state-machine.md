@@ -2,6 +2,26 @@
 title: What are Statecharts and State Machines?
 layout: chapter
 description: A friendly introduction to state machines and statecharts with practical motivation and a simple example to build intuition.
+faqs:
+  - question: What is a state machine?
+    answer: >
+      A state machine models behavior as a set of named states and transitions
+      triggered by events or conditions. It defines how a system moves from one
+      situation to another based on inputs.
+  - question: How is a statechart different from a state machine?
+    answer: >
+      A statechart extends a basic state machine with powerful features like
+      hierarchy, concurrency, history, and guards—making complex behavior easier
+      to model and maintain.
+  - question: Why should I use state machines?
+    answer: >
+      They make complex behavior explicit, testable, and maintainable. You model
+      how the system reacts to events instead of scattering logic across
+      conditionals and callbacks.
+  - question: What are the basic building blocks?
+    answer: >
+      States represent situations like `Idle` or `Running`, transitions define
+      when to move between states, and events trigger those transitions.
 ---
 
 State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they're often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That's enough to scare off anyone who's just trying to build software that works.

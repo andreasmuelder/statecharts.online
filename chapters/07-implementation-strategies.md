@@ -2,6 +2,23 @@
 title: Implementation Strategies for State Machines
 layout: chapter
 description: Compare code-only, library, and interpreter approaches for implementing state machines, with pros, cons, and examples.
+faqs:
+  - question: What are the main implementation strategies for statemachines?
+    answer: >
+      Code-only (switch/case or transition tables), library-based frameworks,
+      and interpreter-based approaches like SCXML.
+  - question: Which approach is fastest and smallest?
+    answer: >
+      code-only implementations are typically fastest with the
+      smallest memory footprint.
+  - question: When should I choose a library?
+    answer: >
+      For faster development, standardized semantics, and maintainability in
+      larger projects.
+  - question: When do I need an interpreter?
+    answer: >
+      When state machines must be dynamic at runtime and defined in data formats
+      like SCXML.
 ---
 
 # Chapter 7: Implementation Strategies for State Machines
