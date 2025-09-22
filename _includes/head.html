@@ -4,13 +4,20 @@
 {% seo %}
 
 {%- comment -%}
+Force og:type to article for chapter pages
+{%- endcomment -%}
+{%- if page.layout == 'chapter' or page.path contains 'chapters/' -%}
+<meta property="og:type" content="article">
+{%- endif -%}
+
+{%- comment -%}
 Add explicit license information via JSON-LD. This complements jekyll-seo-tag output.
 {%- endcomment -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "@id": "{{ page.url | absolute_url }}",
+  "@id": "{{ page.url | absolute_url }}#license",
   "url": "{{ page.url | absolute_url }}",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isPartOf": {
