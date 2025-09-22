@@ -51,4 +51,3 @@ exclude:
   - node_modules
   - vendor
   - _layouts
-  - assets
