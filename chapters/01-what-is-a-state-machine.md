@@ -86,8 +86,8 @@ Some real-world uses include:
 - Communication protocols
 - Game development (e.g. AI state control)
 - Workflow engines
-- **Microservice orchestration**
-- **IoT device management**
+- Microservice orchestration
+- IoT device management
 
 State machines also make it easier to simulate, test, and even generate code for your system — especially when using tools like [itemis CREATE](https://www.itemis.com/en/yakindu/state-machine/), which let you model, simulate, and export code for your charts for different target platforms like C/C++, Java or Python.
 
