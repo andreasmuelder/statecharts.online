@@ -1,17 +1,19 @@
 {% if page.faqs %}
+<br />
+<br />
 <section class="faq" id="faq">
-  <h1>Frequently Asked Questions</h1>
-  <div class="faq-items">
-    {% for item in page.faqs %}
-    <div class="faq-item">
-      <h4 class="faq-question">{{ item.question }}</h4>
-      <div class="faq-answer">
-        {{ item.answer | markdownify }}
-      </div>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-items">
+        {% for item in page.faqs %}
+        <div class="faq-item">
+            <h4 class="faq-question">{{ item.question }}</h4>
+            <div class="faq-answer">
+                {{ item.answer | markdownify }}
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-  </section>
+</section>
+<br />
+<br />
 {% endif %}
-
-
