@@ -1,3 +1,6 @@
+---
+schema_parent_type: WebSite
+---
 Welcome to *The Pragmatic Guide to State Machines*! This guide will take you from the basics of state machines to advanced modeling techniques.
 
 ## About This Guide
