@@ -32,10 +32,13 @@ Here's a quick recap of what we've covered:
 - **Chapter 6: Final States, Choices, and History**  
   You mastered tools to control flow and preserve state, including final states, conditional branching, and both shallow and deep history.
 
-- **Chapter 7: Code Implementation Strategies**  
+- **Chapter 7: Execution Semantics – How Statecharts Run and Process Events**  
+  You understood the execution model, event processing order, and run-to-completion semantics.
+
+- **Chapter 8: State Machine Implementation Strategies**  
   You learned how to implement statemachines in code with different implementation strategies and common frameworks.
 
-- **Chapter 8: Tools and Frameworks**  
+- **Chapter 9: Best State Machine Tools and Frameworks**  
   You explored practical libraries, engines, and modeling tools, with criteria to choose the right one.
 
 ---

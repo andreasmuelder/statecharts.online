@@ -117,6 +117,6 @@ In the next chapter, we'll explore how all these concepts come together in real-
 ---
 
 
-Ready to continue? Head over to [Chapter 7: Implementation Strategies](07-implementation-strategies.md) 
+Ready to continue? Head over to [Chapter 7: Execution Semantics](07-execution-semantics.md) 
 
 [Back to top](#top)
