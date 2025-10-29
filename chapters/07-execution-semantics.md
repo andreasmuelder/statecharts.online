@@ -46,13 +46,25 @@ A Run-To-Completion step is an **atomic execution unit** that:
 
 ### The RTC Process
 
-Conceptually, an RTC step is a bounded atomic transition sequence. The engine takes the next event from the queue and evaluates the model to see which transitions are enabled. It then leaves the current configuration by running exit actions from the innermost active states outward, performs the transition’s own actions, and enters the target configuration from the outside in. If actions raised internal events, those are handled as part of the same step until the machine reaches a stable situation where no further transitions are enabled. Only then does the engine consider the step complete and move on to the next event.
+Conceptually, an RTC step is a bounded atomic transition sequence. The engine takes the next event from the queue and evaluates the model to see which transitions are enabled. It then leaves the current configuration by running exit actions from the innermost active states outward, performs the transition's own actions, and enters the target configuration from the outside in. If actions raised internal events, those are handled as part of the same step until the machine reaches a stable situation where no further transitions are enabled. Only then does the engine consider the step complete and move on to the next event.
+
+### RTC Step Example
+
+Let's examine how RTC works in practice with a concrete example. When you raise the event `doIt`, the run-to-completion step executes the following sequence:
+
+1. **Exit action** of `InnerState` is executed (`x += 1`)
+2. **Exit action** of `State1` is executed (`x += 1`) 
+3. **Transition action** of the `doIt` transition is executed (`x++`)
+4. **Entry action** of `State2` is executed (raises `internalEvent`)
+5. The `internalEvent` is added to the internal event queue and processed in the same RTC step
+6. The transition triggered by `internalEvent` executes, moving to the final state
+
+All this happens within one **atomic step**. The final state is reached and the value of `x` is `3`.
+
+ <iframe src="https://play.itemis.io?model=540e95ea-7e38-4c00-b1b7-d825955b8413" width="100%" height="500px" style="border: 1px solid" allowfullscreen></iframe>
+
 
 The Run-To-Completion model provides several crucial advantages for reliable system behavior. It ensures deterministic behavior where the same input sequence always produces the same output, eliminates race conditions by preventing events from interrupting each other, provides predictable timing since each event is fully processed before the next one begins, and makes debugging significantly easier through clear cause-and-effect relationships that can be traced step by step.
-
- <iframe src="https://play.itemis.io?model=540e95ea-7e38-4c00-b1b7-d825955b8413" width="100%" height="800px" style="border: 1px solid" allowfullscreen></iframe>
-
-
 
 ---
 
@@ -66,20 +78,8 @@ In practice, single‑step semantics are a great default for testability and rea
 
 ### Emulating Super Steps
 
-You can achieve super step-like behavior in single step systems using internal events:
-
-```text
-// Declare internal event
-internal: event continue
-
-// In transient state
-StateB:
-  entry / raise continue
-  continue -> StateC
-```
-
+You can achieve super step-like behavior in single step systems using internal events like we did in the example above.
 The internal event is queued and then processed in the next RTC step, creating a short chain of back‑to‑back transitions without external involvement.
-
 With step granularity established, the remaining question is how engines schedule those steps—reactively when events arrive or at a steady cadence.
 
 ---
@@ -104,7 +104,6 @@ This mode works particularly well for control systems that need regular monitori
 
 ---
 
- 
 
 ## Event Queuing and Processing
 
@@ -121,12 +120,6 @@ This mode works particularly well for control systems that need regular monitori
 ### Best Practices for Event Handling
 
 When designing event handling in your statecharts, several important practices will help ensure reliable behavior. Avoid recursive event raising by never raising events from operation callbacks during event processing, as this can lead to unpredictable execution patterns. Instead, use internal events for chaining transitions and state-to-state communication within your statechart. Always ensure that external events are queued properly so they're processed in the correct order, and plan for event overflow situations where events might arrive faster than your system can process them.
-
----
-
-## Execution Lifecycle
-
-A typical statechart execution follows a well-defined lifecycle that begins with initialization where the system enters initial states and executes their entry actions. This is followed by the main event loop that either continuously or reactively processes incoming events depending on the execution mode. During event processing, the system executes RTC steps for each event while maintaining the current active state configuration through careful state management. Finally, when the statechart terminates, cleanup occurs by executing exit actions for all active states to ensure proper resource management.
 
 ---
 
