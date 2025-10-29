@@ -72,15 +72,37 @@ The Run-To-Completion model provides several crucial advantages for reliable sys
 
 There are two common ways to pace execution through a chain of transitions. With **single‑step semantics**, one RTC step advances the machine by at most one state change along a path. A transient state with an unconditional outgoing transition will still be observed for one step; the next step continues the journey. This makes timing and tracing very predictable because every visible change corresponds to a distinct step.
 
-With **super‑step semantics**, the engine continues to take transitions within a single RTC step until the configuration becomes stable—no further transitions are enabled. That lets you “skip through” transient states in one go and can speed up models that use many such states. The trade‑off is that the amount of work per step becomes data‑dependent, and care must be taken to avoid accidental infinite loops; most engines enforce limits to keep execution bounded.
+With **super‑step semantics**, the engine continues to take transitions within a single RTC step until the configuration becomes stable—no further transitions are enabled. That lets you “skip through” transient states in one go and can speed up models that use many such states. The trade‑off is that the amount of work per step becomes data‑dependent, and care must be taken to avoid accidental infinite loops; most engines enforce limits to keep execution bounded. In practice, single‑step semantics are a great default for testability and real‑time constraints, while super‑steps can be helpful for conceptual simplicity when traversing transient states quickly is desired.
 
-In practice, single‑step semantics are a great default for testability and real‑time constraints, while super‑steps can be helpful for conceptual simplicity when traversing transient states quickly is desired.
+In this statechart with **super-steps disabled**, when you raise the `clicked` event, the machine transitions from `A` to `B` and stops. The variable `x` is set to `21` by the entry action of state `B`. Even though there's an immediate transition from `B` to `C`, it won't be taken until the next `clicked` event is raised.
+
+ <iframe src="https://play.itemis.io?model=78382a20-2f3f-4757-a979-461c39336d2a" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
+
+### Super-Step Semantics
+
+With **super-step semantics**, the engine continues taking transitions **within a single RTC step** until the configuration becomes stable — that is, until no further transitions are enabled. This allows the system to "skip through" transient states in one atomic operation.
+
+In this statechart with **super-steps enabled**, when you raise the `clicked` event, the machine transitions from `A` through `B` all the way to `C` in **one atomic step**. Since `C` has no outgoing transitions, the local reaction is also executed, setting `x` to `42`.
+
+ <iframe src="https://play.itemis.io?model=8e90d984-4ced-4234-9288-89cc336b8966" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
+
+### When to Use Each
+
+**Use single-step semantics when:**
+- You need predictable, bounded execution time (real-time systems)
+- You want to observe or test intermediate states
+- Timing and traceability are critical
+
+**Use super-step semantics when:**
+- Transient states are just implementation details
+- You want faster progress through state chains
+- Conceptual simplicity outweighs traceability needs
+
+> **Best Practice**: Most engines default to single-step for safety. Use super-steps deliberately and test thoroughly to avoid infinite loops.
 
 ### Emulating Super Steps
 
-You can achieve super step-like behavior in single step systems using internal events like we did in the example above.
-The internal event is queued and then processed in the next RTC step, creating a short chain of back‑to‑back transitions without external involvement.
-With step granularity established, the remaining question is how engines schedule those steps—reactively when events arrive or at a steady cadence.
+You can achieve super-step-like behavior in single-step systems using **internal events** (Like I did in the example about Run-To-Completion Semantics). When an action raises an internal event, that event is queued and processed in the next RTC step, creating a chain of back-to-back transitions without external involvement. This approach provides the conceptual simplicity of super-steps while maintaining the predictability and traceability of single-step execution.
 
 ---
 
