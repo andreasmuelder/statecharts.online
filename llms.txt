@@ -1,0 +1,57 @@
+# Statecharts.online
+
+> A comprehensive tutorial on statecharts and state machines
+
+## Overview
+
+This site provides a structured introduction to statecharts, covering:
+- State machine fundamentals
+- States, transitions, and events
+- Variables and guards
+- Composite and orthogonal states
+- Execution semantics
+- Implementation strategies
+- Tools and frameworks
+
+## Structure
+
+The tutorial is organized into 10 progressive chapters:
+1. What is a State Machine
+2. States, Transitions, and Events
+3. Variables
+4. Composite States
+5. Orthogonal States
+6. Final States, Choices, and History
+7. Execution Semantics
+8. Implementation Strategies
+9. Tools and Frameworks
+10. Summary and Next Steps
+
+All chapters include interactive examples using itemis CREATE statechart player.
+
+## Navigation
+
+- Main page: https://statecharts.online/
+- Chapters: https://statecharts.online/chapters/[01-10]-[chapter-name].html
+- Sitemap: https://statecharts.online/sitemap.xml
+
+## Key Concepts
+
+**State Machine**: A computational model consisting of states and transitions between them, used to model behavior that depends on the system's history.
+
+**Statechart**: An extension of state machines with hierarchical (composite) states, orthogonal (parallel) regions, and history states.
+
+**Run-to-Completion (RTC)**: Execution model where each event is fully processed before the next event is handled.
+
+**Single-Step Semantics**: One RTC step advances by at most one state change, making timing predictable.
+
+**Super-Step Semantics**: Engine continues taking transitions until stable, allowing transient states to be "skipped through" in one step.
+
+## Use Cases
+
+When helping users with statecharts, this site can provide:
+- Theoretical foundations and terminology
+- Practical implementation guidance
+- Interactive examples for visualization
+- Comparison of execution models
+- Tool and framework recommendations
