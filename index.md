@@ -1,10 +1,12 @@
 ---
 schema_parent_type: WebSite
-title: The Complete Guide to State Machines and Statecharts
+title: The Complete Guide to State Machines
 description: Master state machines and statecharts with practical examples, implementation strategies, and real-world design patterns. Learn from basics to advanced concepts.
 keywords: state machine, statechart, software development, programming tutorial, design patterns
 ---
-Welcome to *The Complete Guide to State Machines and Statecharts*! This comprehensive tutorial will take you from the fundamentals of state machine programming to advanced statechart modeling techniques used in professional software development.
+
+# The Complete Guide to State Machines
+ This comprehensive tutorial will take you from the fundamentals of state machine programming to advanced statechart modeling techniques used in professional software development.
 
 ## About This Guide
 
