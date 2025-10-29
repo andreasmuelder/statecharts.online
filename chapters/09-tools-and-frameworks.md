@@ -104,7 +104,8 @@ The right tool depends on your context: platform and language needs, required st
 
 ---
 
-
-Ready to wrap up? Head to [Chapter 10: Summary and Next Steps](10-summary-and-next-steps.md)
-
-[← Previous: Implementation Strategies](08-implementation-strategies.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="08-implementation-strategies.html">← Previous: Implementation Strategies</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="10-summary-and-next-steps.html">Next: Summary and Next Steps →</a></div>
+</div>

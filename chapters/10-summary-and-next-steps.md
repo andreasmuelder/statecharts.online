@@ -111,7 +111,11 @@ And most of all: enjoy the journey.
 
 Happy modeling!
 
-[← Previous: Tools and Frameworks](09-tools-and-frameworks.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="09-tools-and-frameworks.html">← Previous: Tools and Frameworks</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"></div>
+</div>
 
 
 

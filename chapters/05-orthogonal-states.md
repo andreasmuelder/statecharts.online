@@ -111,7 +111,8 @@ In the next chapters, we'll look at more advanced features like **history states
 
 ---
 
-
-Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](06-final-states-choices-and-history.md)
-
-[← Previous: Composite States](04-composite-states.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="04-composite-states.html">← Previous: Composite States</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="06-final-states-choices-and-history.html">Next: Final States, Choices, and History →</a></div>
+</div>

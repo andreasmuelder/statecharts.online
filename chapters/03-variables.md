@@ -110,9 +110,8 @@ They help you:
 
 ---
 
-
-In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
-
-Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](04-composite-states.md)
-
-[← Previous: States, Transitions, and Events](02-states-transitions-and-events.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="02-states-transitions-and-events.html">← Previous: States, Transitions, and Events</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="04-composite-states.html">Next: Composite States →</a></div>
+</div>

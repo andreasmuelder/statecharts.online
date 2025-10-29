@@ -3,7 +3,6 @@ title: Execution Semantics – How Statecharts Run and Process Events
 date: 2025-10-06
 last_modified_at: 2025-10-06
 layout: chapter
-reading_time: 15 min
 description: Understand the execution model of statecharts, event processing order, and the run-to-completion semantics that govern behavior.
 faqs:
   - question: What are execution semantics in statecharts?
@@ -134,6 +133,8 @@ Execution semantics make statecharts dependable. Event‑driven machines react o
 
 ---
 
-Ready to continue? Head over to [Chapter 8: State Machine Implementation Strategies](08-implementation-strategies.md)
-
-[← Previous: Final States, Choices, and History](06-final-states-choices-and-history.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="06-final-states-choices-and-history.html">← Previous: Final States, Choices, and History</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="08-implementation-strategies.html">Next: Implementation Strategies →</a></div>
+</div>

@@ -281,6 +281,8 @@ By understanding the trade-offs, you can choose the right approach and build rel
 
 ---
 
-Ready to continue? Head over to [Chapter 9: Best State Machine Tools and Frameworks](09-tools-and-frameworks.md)
-
-[← Previous: Execution Semantics](07-execution-semantics.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="07-execution-semantics.html">← Previous: Execution Semantics</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="09-tools-and-frameworks.html">Next: Tools and Frameworks →</a></div>
+</div>

@@ -103,7 +103,8 @@ This approach to **software architecture** makes your systems more predictable, 
 
 ---
 
-
-Ready to continue? Head over to [Chapter 2: States, Transitions, and Events](02-states-transitions-and-events.md) 
-
-[Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="02-states-transitions-and-events.html">Next: States, Transitions, and Events →</a></div>
+</div>

@@ -106,7 +106,8 @@ But at its core, it's still all about answering:
 
 ---
 
-
-Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md)
-
-[← Previous: What is a State Machine?](01-what-is-a-state-machine.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="01-what-is-a-state-machine.html">← Previous: What is a State Machine?</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="03-variables.html">Next: Variables →</a></div>
+</div>

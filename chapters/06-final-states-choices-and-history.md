@@ -117,7 +117,8 @@ In the next chapter, we'll explore how all these concepts come together in real-
 
 ---
 
-
-Ready to continue? Head over to [Chapter 7: Execution Semantics](07-execution-semantics.md)
-
-[← Previous: Orthogonal States](05-orthogonal-states.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="05-orthogonal-states.html">← Previous: Orthogonal States</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="07-execution-semantics.html">Next: Execution Semantics →</a></div>
+</div>

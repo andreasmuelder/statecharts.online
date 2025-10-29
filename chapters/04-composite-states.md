@@ -82,7 +82,8 @@ In the next chapter, we'll explore **orthogonal states** — another powerful wa
 
 ---
 
-
-Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](05-orthogonal-states.md)
-
-[← Previous: Variables](03-variables.md) | [Back to top](#top)
+<div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+  <div style="text-align: left; flex: 2;"><a href="03-variables.html">← Previous: Variables</a></div>
+  <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
+  <div style="text-align: right; flex: 2;"><a href="05-orthogonal-states.html">Next: Orthogonal States →</a></div>
+</div>
