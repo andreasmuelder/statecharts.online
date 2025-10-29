@@ -3,6 +3,7 @@ title: Best State Machine Tools and Frameworks – Libraries and Modeling Softwa
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 12 min
 description: Overview of popular tools and frameworks for modeling and executing state machines and statecharts across languages and platforms.
 faqs:
   - question: How do I choose between a modeling tool and a code library?
@@ -104,7 +105,6 @@ The right tool depends on your context: platform and language needs, required st
 ---
 
 
-Ready to wrap up? Head back to [Summary and Next Steps](10-summary-and-next-steps.md).
+Ready to wrap up? Head to [Chapter 10: Summary and Next Steps](10-summary-and-next-steps.md)
 
-
-[Back to top](#top)
+[← Previous: Implementation Strategies](08-implementation-strategies.md) | [Back to top](#top)

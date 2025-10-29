@@ -3,6 +3,7 @@ title: State Machine Implementation Strategies – Code Patterns and Best Practi
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 15 min
 description: Compare code-only, library, and interpreter approaches for implementing state machines, with pros, cons, and examples.
 faqs:
   - question: What are the main implementation strategies for statemachines?
@@ -280,6 +281,6 @@ By understanding the trade-offs, you can choose the right approach and build rel
 
 ---
 
-Ready to continue? Head over to [Chapter 9: Best State Machine Tools and Frameworks](09-tools-and-frameworks.md) and then to the [Summary and Next Steps](10-summary-and-next-steps.md) 
+Ready to continue? Head over to [Chapter 9: Best State Machine Tools and Frameworks](09-tools-and-frameworks.md)
 
-[Back to top](#top)
+[← Previous: Execution Semantics](07-execution-semantics.md) | [Back to top](#top)

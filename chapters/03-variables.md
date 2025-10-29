@@ -3,6 +3,7 @@ title: Variables in State Machines – Adding Memory and Logic to Statecharts
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 8 min
 description: Learn how variables add memory and intelligence to statecharts, enabling guards, actions, and richer decision logic.
 faqs:
   - question: Why do statecharts need variables?
@@ -112,6 +113,6 @@ They help you:
 
 In the next chapter, we'll explore how statecharts grow in complexity, and how hierarchy and parallelism help manage that complexity in a clean and scalable way.
 
-Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](04-composite-states.md) 
+Ready to continue? Head over to [Chapter 4: Composite States – Organizing Behavior with Hierarchy](04-composite-states.md)
 
-[Back to top](#top)
+[← Previous: States, Transitions, and Events](02-states-transitions-and-events.md) | [Back to top](#top)

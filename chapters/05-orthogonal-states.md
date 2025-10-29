@@ -3,6 +3,7 @@ title: Orthogonal States in Statecharts – Modeling Parallel Behavior and Concu
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 10 min
 description: Model logical concurrency with orthogonal regions to run independent behaviors side-by-side without threads.
 faqs:
   - question: What are orthogonal states?
@@ -111,6 +112,6 @@ In the next chapters, we'll look at more advanced features like **history states
 ---
 
 
-Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](06-final-states-choices-and-history.md) 
+Ready to continue? Head over to [Chapter 6: Final States, Choices, and History](06-final-states-choices-and-history.md)
 
-[Back to top](#top)
+[← Previous: Composite States](04-composite-states.md) | [Back to top](#top)

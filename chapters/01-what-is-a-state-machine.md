@@ -3,6 +3,7 @@ title: What is a State Machine? Complete Beginner's Guide to Statecharts
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 10 min
 description: Learn what state machines and statecharts are with practical examples. Complete beginner's guide to understanding finite state machines in software development.
 faqs:
   - question: What is a state machine?
@@ -28,7 +29,11 @@ faqs:
 
 State machines are one of those concepts that sound more complicated than they really are. Many developers shy away from using them, partly because they're often introduced through heavy academic language—terms like "deterministic automata," "powerset construction," or "mathematical model of computation." That's enough to scare off anyone who's just trying to build **reactive software** that works.
 
-The good news? You don't need a PhD in computer science to understand or use **finite state machines**. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems. They're especially useful for **event-driven programming**—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
+The good news? You don't need a PhD in computer science to understand or use **finite state machines**. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems.
+
+> **Terminology Note**: Throughout this guide, we use **"state machine"** and **"statechart"** somewhat interchangeably, but there's an important distinction: A basic **state machine** has states and transitions. A **statechart** extends this with powerful features like hierarchy (nested states), concurrency (parallel regions), history states, and guards. Think of statecharts as "state machines on steroids"—more expressive and better suited for complex, real-world systems. We'll start with basic state machines and gradually introduce statechart features as we go.
+
+They're especially useful for **event-driven programming**—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
 
 Once you start using state machines, you'll realize they're not some abstract, academic concept—they're a practical and readable way to design systems that respond to real-world events.
 

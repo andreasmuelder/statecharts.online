@@ -3,6 +3,7 @@ title: History, Choices and the Final State – Controlling Flow and Remembering
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 12 min
 description: Master final states, choice nodes, and history to control flow and resume behavior where it left off.
 faqs:
   - question: What is a final state?
@@ -117,6 +118,6 @@ In the next chapter, we'll explore how all these concepts come together in real-
 ---
 
 
-Ready to continue? Head over to [Chapter 7: Execution Semantics](07-execution-semantics.md) 
+Ready to continue? Head over to [Chapter 7: Execution Semantics](07-execution-semantics.md)
 
-[Back to top](#top)
+[← Previous: Orthogonal States](05-orthogonal-states.md) | [Back to top](#top)

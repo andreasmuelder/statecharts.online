@@ -3,6 +3,7 @@ title: Composite States – Organizing Behavior with Hierarchy
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 10 min
 description: Use composite states to structure complex behavior with hierarchy, keeping large statecharts readable and maintainable.
 faqs:
   - question: What is a composite state?
@@ -82,6 +83,6 @@ In the next chapter, we'll explore **orthogonal states** — another powerful wa
 ---
 
 
-Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](05-orthogonal-states.md) 
+Ready to continue? Head over to [Chapter 5: Orthogonal States – Modeling Concurrency Cleanly](05-orthogonal-states.md)
 
-[Back to top](#top)
+[← Previous: Variables](03-variables.md) | [Back to top](#top)

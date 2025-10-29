@@ -3,6 +3,7 @@ title: States, Transitions, and Events
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 8 min
 description: Understand the core building blocks of statecharts — states, transitions, and events — and how they define behavior and flow.
 faqs:
   - question: What is a state in a statechart?
@@ -106,6 +107,6 @@ But at its core, it's still all about answering:
 ---
 
 
-Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md) 
+Ready to continue? Head over to [Chapter 3: Variables – Giving Your Statechart a Memory](03-variables.md)
 
-[Back to top](#top)
+[← Previous: What is a State Machine?](01-what-is-a-state-machine.md) | [Back to top](#top)

@@ -3,6 +3,7 @@ title: Summary and Next Steps
 date: 2025-09-22
 last_modified_at: 2025-09-22
 layout: chapter
+reading_time: 8 min
 description: A recap of key concepts with suggestions for hands-on practice, tools, and where to go next.
 ---
 
@@ -57,7 +58,28 @@ Used correctly, they help you:
 
 ## What's Next?
 
-Now that you've learned the theory, it's time to get your hands dirty. Try modeling a real system — something from your work, a UI flow, or a home automation process. Start simple, then grow complexity with hierarchy, concurrency, and history when needed.
+Now that you've learned the theory, it's time to get your hands dirty. Here are concrete project ideas organized by complexity:
+
+### Beginner Projects (1-2 hours)
+- **Traffic Light Controller**: Model a simple traffic light with three states (Red, Yellow, Green) using timed transitions
+- **Door Lock System**: Create a state machine for a PIN-based door lock with locked/unlocked states and failure handling
+- **Simple Game Character**: Model a character with states like Idle, Walking, Jumping, and Falling
+
+### Intermediate Projects (3-5 hours)
+- **Vending Machine**: Include states for selection, payment processing, dispensing, and change return with variables for money tracking
+- **Washing Machine Controller**: Use composite states for different wash cycles and orthogonal regions for door lock and drum control
+- **User Registration Flow**: Model a multi-step form with validation, error handling, and history states for "back" navigation
+
+### Advanced Projects (5+ hours)
+- **Elevator Control System**: Multiple elevators with request queuing, direction control, and door safety using orthogonal regions
+- **Game AI Behavior**: NPC behavior with patrol, chase, attack, and retreat states using guards based on health and distance
+- **Communication Protocol**: Model a TCP-like protocol with connection states, timeouts, retries, and error recovery
+
+### Real-World Application Ideas
+- Convert existing if/else chains in your codebase to statecharts
+- Model your application's authentication flow
+- Design the behavior for an IoT device you use daily
+- Create a statechart for a UI wizard or onboarding flow
 
 You might also explore:
 - Simulation and testing of statecharts
@@ -89,7 +111,7 @@ And most of all: enjoy the journey.
 
 Happy modeling!
 
-[Back to top](#top)
+[← Previous: Tools and Frameworks](09-tools-and-frameworks.md) | [Back to top](#top)
 
 
 
