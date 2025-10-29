@@ -53,8 +53,7 @@ Let's take a very basic example: a light switch.
  <iframe src="https://play.itemis.io?model=7ec86474-66d1-4cca-bb60-6f7d91e9601d" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
 
-> [!TIP]
-> You can use the [itemis CREATE Player](https://create.itemis.io) to interactively simulate your statechart. Watching your model run step-by-step is one of the best ways to understand its execution semantics and behavior.
+> 💡 **Tip:** You can use the [itemis CREATE Player](https://create.itemis.io) to interactively simulate your statechart. Watching your model run step-by-step is one of the best ways to understand its execution semantics and behavior.
 
 We model the switch with two states:
 - `On`

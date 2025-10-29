@@ -101,8 +101,7 @@ They help you:
 - Store internal state cleanly
 - Avoid cluttering your chart with unnecessary states
 
-> [!TIP]
-> If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
+> 💡 **Tip:** If you find yourself duplicating similar states just to track a number or flag — it might be time to use a variable instead.
 
 ---
 
