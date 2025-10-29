@@ -38,7 +38,7 @@ The `Survey` Statechart also has a `Choice` State, depending on the answer of `Q
 
 Finally, if all questions are answered, the Statemachine will reach its `Final State`.
 
- <iframe src="https://play.itemis.io?model=087929ff-7093-4493-9421-4c253c13a672" width="100%" height="800px" style="border: 1px solid" allowfullscreen></iframe>
+ <iframe src="https://play.itemis.io?model=66d5f408-929c-4cfe-b52d-289173f456de" width="100%" height="800px" style="border: 1px solid" allowfullscreen></iframe>
 
 ## History States – Picking Up Where You Left Off
 
