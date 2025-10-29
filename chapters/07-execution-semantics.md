@@ -27,7 +27,7 @@ Understanding how statecharts execute is crucial for building reliable, predicta
 
 This chapter explores the core execution concepts that make statecharts powerful and predictable in real-world applications.
 
-We’ll move fast and in the most compact order: first the atomic guarantee (run‑to‑completion), then step granularity (single vs super), then how engines schedule steps (event‑driven vs cycle‑based), followed by queuing rules and the overall lifecycle.
+We’ll move fast and in the most compact order: first the atomic guarantee (run‑to‑completion), then step granularity (single vs super), then how engines schedule steps (event‑driven vs cycle‑based), followed by queuing rules.
 
 ---
  
@@ -78,10 +78,6 @@ In this statechart with **super-steps disabled**, when you raise the `clicked` e
 
  <iframe src="https://play.itemis.io?model=78382a20-2f3f-4757-a979-461c39336d2a" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
-### Super-Step Semantics
-
-With **super-step semantics**, the engine continues taking transitions **within a single RTC step** until the configuration becomes stable — that is, until no further transitions are enabled. This allows the system to "skip through" transient states in one atomic operation.
-
 In this statechart with **super-steps enabled**, when you raise the `clicked` event, the machine transitions from `A` through `B` all the way to `C` in **one atomic step**. Since `C` has no outgoing transitions, the local reaction is also executed, setting `x` to `42`.
 
  <iframe src="https://play.itemis.io?model=8e90d984-4ced-4234-9288-89cc336b8966" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
@@ -102,7 +98,7 @@ In this statechart with **super-steps enabled**, when you raise the `clicked` ev
 
 ### Emulating Super Steps
 
-You can achieve super-step-like behavior in single-step systems using **internal events** (Like I did in the example about Run-To-Completion Semantics). When an action raises an internal event, that event is queued and processed in the next RTC step, creating a chain of back-to-back transitions without external involvement. This approach provides the conceptual simplicity of super-steps while maintaining the predictability and traceability of single-step execution.
+You can achieve super-step-like behavior in single-step systems using **internal events** (like I did in the example about Run-To-Completion Semantics). When an action raises an internal event, that event is queued and processed in the next RTC step, creating a chain of back-to-back transitions without external involvement. This approach provides the conceptual simplicity of super-steps while maintaining the predictability and traceability of single-step execution.
 
 ---
 
@@ -134,10 +130,6 @@ This mode works particularly well for control systems that need regular monitori
 **External Events** are raised by the environment or other system components outside the statechart itself. These events are queued in the main event queue and processed according to FIFO ordering, ensuring that events are handled in the sequence they arrived.
 
 **Internal Events** are raised within the statechart during execution, often as a result of actions or transitions. These events are typically processed immediately or placed in a separate internal queue, and they enable communication between orthogonal regions within the same statechart.
-
-### Event Processing Constraints
-
-**Downstream Event Processing**: In some execution models, events raised during execution are only visible within the same RTC step, creating important constraints for statechart design. This particularly affects orthogonal regions where earlier regions might not see events raised by later regions in the same execution cycle. While this constraint improves memory efficiency by reducing the need for complex event buffering, it also requires careful consideration of region ordering and event usage patterns in your model design.
 
 ### Best Practices for Event Handling
 
