@@ -6,6 +6,10 @@
   <body>
     {%- include header.html -%}
 
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      ☰
+    </button>
+
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {%- include sidebar.html -%}
@@ -17,6 +21,41 @@
 
     {%- include footer.html -%}
     {%- include cookie-consent.html -%}
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const sidebar = document.querySelector('.sidebar');
+      
+      menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+        menuToggle.textContent = sidebar.classList.contains('open') ? '✕' : '☰';
+      });
+
+      // Close menu when clicking on a link
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 800) {
+            sidebar.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            menuToggle.textContent = '☰';
+          }
+        });
+      });
+
+      // Close menu when clicking on overlay
+      document.addEventListener('click', function(event) {
+        if (document.body.classList.contains('menu-open') && 
+            !sidebar.contains(event.target) && 
+            event.target !== menuToggle) {
+          sidebar.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          menuToggle.textContent = '☰';
+        }
+      });
+    </script>
   </body>
 
 </html> 
