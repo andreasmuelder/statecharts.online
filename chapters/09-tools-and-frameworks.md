@@ -74,7 +74,7 @@ Note: Details are summarized from the provided material and vendor documentation
 
 ### C++
 - [Boost MSM](https://www.boost.org/doc/libs/release/libs/msm/doc/HTML/index.html) / [Boost.SML](https://boost-ext.github.io/sml/): Compile-time state machine libraries with strong type-safety and performance.
-- [Qt State Machine Framework](https://doc.qt.io/qt-6/statemachine-api.html): Part of Qt; integrates with signals/slots and QML.
+- [Qt State Machine Framework](https://doc.qt.io/qt-6/qtstatemachine-index.html): Part of Qt; integrates with signals/slots and QML.
 
 ### JavaScript / TypeScript
 - [XState](https://xstate.js.org/): Full-featured statecharts with visualizer, actors, and tooling.
