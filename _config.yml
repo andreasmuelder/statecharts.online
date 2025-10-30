@@ -30,7 +30,7 @@ defaults:
     values:
       layout: "default"
       author: "Andreas Mülder"
-      description: "Master state machines and statecharts with practical examples, implementation strategies, and real-world design patterns for software development"
+      description: "Master state machines and statecharts with practical examples, implementation strategies, and design patterns for software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
   - scope:

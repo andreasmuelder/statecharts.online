@@ -1,7 +1,7 @@
 ---
 schema_parent_type: WebSite
 title: The Complete Guide to State Machines
-description: Master state machines and statecharts with practical examples, implementation strategies, and real-world design patterns. Learn from basics to advanced concepts.
+description: Master state machines and statecharts with practical examples, implementation strategies, and  design patterns. Learn from basics to advanced concepts.
 keywords: state machine, statechart, software development, programming tutorial, design patterns
 ---
 
