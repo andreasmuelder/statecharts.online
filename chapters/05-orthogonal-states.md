@@ -20,8 +20,16 @@ faqs:
       fan and temperature control in a smart home.
   - question: How do regions coordinate?
     answer: >
-      Use events, shared variables, or synchronization mechanisms to communicate
-      between regions as needed.
+      Use events, shared variables, or synchronization mechanisms like join
+      and fork nodes to communicate between regions as needed.
+  - question: What are join and fork nodes?
+    answer: >
+      Fork nodes split execution into multiple parallel paths, while join nodes
+      synchronize multiple parallel paths back together before proceeding.
+  - question: When should I use join/fork?
+    answer: >
+      Use fork to start multiple parallel activities simultaneously, and join
+      to wait for multiple parallel activities to complete before proceeding.
 ---
 
 In real-world systems, things often happen at the same time — or at least, independently. For example, a washing machine might be heating water while spinning the drum. A robot might be tracking its position while checking for obstacles.
@@ -92,6 +100,54 @@ This is how orthogonal regions can still collaborate — even though they're log
 
 ---
 
+## Join and Fork: Advanced Synchronization
+
+For more sophisticated coordination between orthogonal regions, statecharts provide **join** and **fork** nodes. These special synchronization constructs allow you to:
+
+- **Split execution** into multiple parallel paths (fork)
+- **Synchronize and merge** multiple parallel paths back together (join)
+
+### Fork Nodes
+
+A **fork node** (also called a fork bar) splits a single transition into multiple parallel transitions, activating several regions simultaneously. It's represented by a thick black bar with one incoming transition and multiple outgoing transitions.
+
+Fork nodes are useful when:
+- You need to start multiple parallel activities at once
+- An event should trigger several independent processes
+- You want to coordinate the start of orthogonal regions
+
+### Join Nodes
+
+A **join node** (also called a join bar) waits for multiple parallel regions to reach specific states before proceeding. It's represented by a thick black bar with multiple incoming transitions and one outgoing transition.
+
+Join nodes are useful when:
+- You need to wait for multiple parallel activities to complete
+- Several conditions must be met before proceeding
+- You want to synchronize the end of orthogonal regions
+
+### Example: Embedded System Initialization
+
+Consider an embedded IoT device that must initialize two subsystems before it becomes operational:
+
+ <iframe src="https://play.itemis.io?model=0b11d9ca-e794-4f7f-83af-4487ede3f1ce" width="100%" height="600px" style="border: 1px solid" allowfullscreen></iframe>
+
+
+The fork ensures all initialization processes start simultaneously when the device powers on. The join ensures the system only transitions to "Operational" state when **all** subsystems have successfully initialized.
+
+This pattern is common in embedded systems where:
+- Network connectivity, sensor calibration, and security setup can happen in parallel
+- The system must not accept user commands until all subsystems are operational
+- Failure in any subsystem should prevent the device from becoming ready
+
+### Execution Semantics
+
+- **Fork execution**: When a fork is triggered, all outgoing transitions are taken simultaneously, activating their target states in parallel
+- **Join execution**: A join transition is only enabled when **all** incoming transitions are enabled (i.e., all prerequisite states are active)
+
+This provides deterministic synchronization without the complexity of traditional threading models.
+
+---
+
 ## Summary
 
 Orthogonal states are a powerful tool for modeling **concurrent, but independent** behaviors within a single system.
@@ -100,6 +156,12 @@ They help you:
 - Keep related concerns separated
 - Model multiple control flows cleanly
 - Avoid complex nesting by distributing logic across parallel regions
+- Coordinate parallel activities using **join and fork** synchronization
+
+Advanced synchronization with join and fork nodes enables you to:
+- Split single transitions into multiple parallel paths
+- Synchronize multiple parallel activities before proceeding
+- Create deterministic coordination patterns without threading complexity
 
 Just remember: orthogonality is **not true parallelism**. It's a way to think about things happening side by side — while still executing in a **defined, sequential order**.
 
