@@ -89,18 +89,7 @@ When an orthogonal state is exited:
 
 ---
 
-## Synchronization and Coordination
-
-Sometimes you'll want to coordinate between regions. This can be done using:
-- **Events** raised by one region and handled in another
-- **Variables** shared across regions
-- **Exit and entry points** combined with synchronization nodes (in some tools)
-
-This is how orthogonal regions can still collaborate — even though they're logically separate.
-
----
-
-## Join and Fork: Advanced Synchronization
+## Join and Fork: Coordinating Orthogonal Regions
 
 For more sophisticated coordination between orthogonal regions, statecharts provide **join** and **fork** nodes. These special synchronization constructs allow you to:
 
