@@ -49,27 +49,28 @@ At their core, state machines are made up of **states** and **transitions**.
 
 There is always one **initial state** where the system starts, and from there, it can move between states based on what's happening in the world around it.
 
-Let's take a very basic example: a light switch.
+Let's take a practical example: a bicycle light controller.
 
 ---
 
-### Example: A Simple Light Switch
+### Example: A Bicycle Light Controller
 
- <iframe src="https://play.itemis.io?model=7ec86474-66d1-4cca-bb60-6f7d91e9601d" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
+<iframe src="/assets/html/bicycle-light.html" width="100%" height="900px" style="border: none;" allowfullscreen></iframe>
 
+The bicycle light has three modes, cycled through with a single button:
 
-> 💡 **Tip:** You can use the [itemis CREATE Player](https://create.itemis.io) to interactively simulate your statechart. Watching your model run step-by-step is one of the best ways to understand its execution semantics and behavior.
+- `light_off` — the light is off (`light.on = false`). This is the initial state.
+- `light_on` — the light is on steadily (`light.on = true`).
+- `light_blinking` — a **composite state** in which the light alternates automatically between on and off every 400 ms.
 
-We model the switch with two states:
-- `On`
-- `Off`
+There is one input:
+- `button.pressed`
 
-And one input:
-- `buttonPressed`
+Pressing the button on the saddle cycles through the modes: **Off → On → Blinking → Off**.
 
-If the light is `Off` and the button is pressed, we transition to `On`. Press it again, we go back to `Off`.
+Inside the `light_blinking` state, no button press is needed—the `after 400 ms` timer drives the transitions between its internal `light_off` and `light_on` sub-states automatically.
 
-This might look like overkill for a simple light, but the moment you want to add brightness levels, timers, motion sensors, or modes like "night mode," you'll quickly realize the value of modeling behavior cleanly.
+This example already shows two key strengths of state machines: **explicit behavior** (you can read every mode and transition directly from the diagram) and **hierarchy** (the blinking logic is neatly encapsulated inside a composite state, keeping the top level clean).
 
 ---
 
