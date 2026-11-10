@@ -21,7 +21,6 @@ timezone: Europe/Berlin
 url: "https://statecharts.online"
 baseurl: "" # Leave empty if your site is at the root
 keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling, finite state machine, FSM, state management, reactive programming, event-driven, behavior modeling, software architecture, system design"
-google_analytics: G-NE5DVSYWNN
 
 # Default front matter
 defaults:
@@ -34,6 +33,10 @@ defaults:
       description: "Master state machines and statecharts with practical examples, implementation strategies, and design patterns for software development"
       keywords: "state machine, statechart, software development, programming, design patterns, UML, modeling"
       image: "/assets/images/og-image.jpg"
+  - scope:
+      path: "assets/html"
+    values:
+      sitemap: false
   - scope:
       path: "chapters"
       type: "pages"

@@ -4,40 +4,21 @@ title: Privacy Policy
 permalink: /privacy-policy
 ---
 
-# Privacy Policy
+## No Cookies
 
-## Cookies and Analytics
+This website does not set cookies and does not store anything on your device for tracking purposes. That is why you don't see a cookie banner.
 
-This website uses Google Analytics to collect information about how visitors use our site. Google Analytics uses cookies to collect this information in an anonymous form, including the number of visitors to the site, where visitors have come to the site from, and the pages they visited.
+## Analytics
 
-We use this information to help us improve our website and provide a better user experience.
+To understand which pages are read and where visitors come from, this website uses [Plausible Analytics](https://plausible.io/), a privacy-friendly web analytics service.
 
-### What are cookies?
+According to Plausible, the service works without cookies, does not collect personal data, and does not track visitors across websites or devices. All statistics are aggregated; individual visitors cannot be identified. Details are described in the [Plausible data policy](https://plausible.io/data-policy).
 
-Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide useful information to website owners.
+## Embedded Content
 
-### How we use cookies
+The interactive statechart examples on this website are loaded from `play.itemis.io`, the itemis CREATE player. When a page with such an example is displayed, your browser connects to that server, which receives technical information such as your IP address.
 
-We use cookies to:
-- Understand how visitors use our website
-- Improve the user experience
-- Remember your preferences
-
-### Managing cookies
-
-Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may impact your experience of our website.
-
-### Google Analytics
-
-We use Google Analytics to understand how our website is used. Google Analytics uses cookies to collect information about:
-- The pages you visit
-- How long you spend on each page
-- How you got to the site
-- What you click on while you're visiting the site
-
-This information is collected anonymously and does not identify you personally.
-
-### Your rights
+## Your Rights
 
 You have the right to:
 - Access your personal data
