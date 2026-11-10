@@ -15,7 +15,7 @@ Germany
 
 ## Contact
 
-Email: <span id="contact-email" data-user="muelder" data-domain="itemis.de">muelder [at] itemis [dot] de</span>
+Email: <span id="contact-email" data-user="hello" data-domain="statecharts.online">hello [at] statecharts [dot] online</span>
 
 <script>
   (function () {
