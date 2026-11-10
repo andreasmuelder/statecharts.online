@@ -15,7 +15,20 @@ Germany
 
 ## Contact
 
-Email: [muelder@itemis.de](mailto:muelder@itemis.de)
+Email: <span id="contact-email" data-user="muelder" data-domain="itemis.de">muelder [at] itemis [dot] de</span>
+
+<script>
+  (function () {
+    var el = document.getElementById('contact-email');
+    var address = el.dataset.user + '@' + el.dataset.domain;
+    var link = document.createElement('a');
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+    el.replaceWith(link);
+  })();
+</script>
+
+The contact details published here may not be used to send unsolicited advertising or information material.
 
 ## Responsible for the content according to Sec. 18 para. 2 MStV
 
