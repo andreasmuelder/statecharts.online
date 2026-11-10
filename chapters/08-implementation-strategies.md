@@ -1,7 +1,7 @@
 ---
 title: State Machine Implementation Strategies – Code Patterns and Best Practices
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2026-11-10
 layout: chapter
 reading_time: 15 min
 description: Compare code-only, library, and interpreter approaches for implementing state machines, with pros, cons, and examples.
@@ -12,7 +12,7 @@ faqs:
       and interpreter-based approaches like SCXML.
   - question: Which approach is fastest and smallest?
     answer: >
-      code-only implementations are typically fastest with the
+      Code-only implementations are typically fastest with the
       smallest memory footprint.
   - question: When should I choose a library?
     answer: >
@@ -49,16 +49,19 @@ Code-only implementations don’t rely on any external libraries. They are fast,
 The most common and classic approach looks like this in `C` code:
 
 ```c
-enum State { Off, On } state = Off;
-int onCount = 0;
-bool isOn = false;
+typedef enum { Off, On } State;
+typedef enum { buttonPressed } Event;
+
+State state = On;        // initial state
+int counter = 1;         // entry action of On ran when the machine started
+bool isOn = true;
 
 void handleEvent(Event event) {
     switch (state) {
         case Off:
             if (event == buttonPressed) {
                 isOn = true;            // transition action
-                onCount += 1;           // entry action
+                counter += 1;           // entry action of On
                 state = On;
             }
             break;
@@ -90,26 +93,28 @@ void handleEvent(Event event) {
 
 ### State Transition Table
 
-In this approach, the entire state machine is declared **declaratively** in a table.
+In this approach, the entire state machine is described **declaratively** in a table. It uses the same declarations as above.
 
 ```c
 typedef struct {
     State current;
     Event trigger;
     State next;
-    void (*action)();
+    void (*action)(void);
 } Transition;
 
-void toOn()  { isOn = true; onCount += 1; }
-void toOff() { isOn = false; }
+void toOn(void)  { isOn = true; counter += 1; }
+void toOff(void) { isOn = false; }
 
 Transition table[] = {
     { Off, buttonPressed, On,  toOn },
     { On,  buttonPressed, Off, toOff },
 };
 
+#define NUM_TRANSITIONS (sizeof(table) / sizeof(table[0]))
+
 void handleEvent(Event event) {
-    for (int i = 0; i < NUM_TRANSITIONS; ++i) {
+    for (size_t i = 0; i < NUM_TRANSITIONS; ++i) {
         if (table[i].current == state && table[i].trigger == event) {
             table[i].action();
             state = table[i].next;
@@ -126,7 +131,7 @@ The logic is completely separated from the state machine structure. Transitions 
 - Easy to generate automatically
 
 ❌ Disadvantages:
-- Difficult to extend with complex behavior (e.g., actions on transitions)
+- Difficult to extend with complex behavior (e.g., hierarchy or history)
 - Harder to visualize complex flows
 - Harder to understand by reading the code
 
@@ -137,37 +142,48 @@ The logic is completely separated from the state machine structure. Transitions 
 This uses classic object-oriented design:
 
 ```cpp
+class Context;
+
 class State {
 public:
+    virtual ~State() = default;
     virtual void onButtonPressed(Context& ctx) = 0;
 };
 
 class OffState : public State {
 public:
-    void onButtonPressed(Context& ctx) override {
-        ctx.isOn = true;
-        ctx.onCount++;
-        ctx.setState(new OnState());
-    }
+    void onButtonPressed(Context& ctx) override;
 };
 
 class OnState : public State {
 public:
-    void onButtonPressed(Context& ctx) override {
-        ctx.isOn = false;
-        ctx.setState(new OffState());
-    }
+    void onButtonPressed(Context& ctx) override;
 };
 
 class Context {
 public:
-    int onCount = 0;
-    bool isOn = false;
-    State* state = new OffState();
+    int counter = 1;         // entry action of On ran when the machine started
+    bool isOn = true;
+    OffState off;
+    OnState on;
 
-    void setState(State* s) { delete state; state = s; }
+    void setState(State& next) { state = &next; }
     void buttonPressed() { state->onButtonPressed(*this); }
+
+private:
+    State* state = &on;      // initial state
 };
+
+void OffState::onButtonPressed(Context& ctx) {
+    ctx.isOn = true;         // transition action
+    ctx.counter++;           // entry action of On
+    ctx.setState(ctx.on);
+}
+
+void OnState::onButtonPressed(Context& ctx) {
+    ctx.isOn = false;        // transition action
+    ctx.setState(ctx.off);
+}
 ```
 
 - Each **state** is a class that implements a common interface.
@@ -185,7 +201,7 @@ public:
 
 ## Library-Based Approaches
 
-Popular frameworks like [Spring StateMachine](https://spring.io/projects/spring-statemachine), [Boost MSM](https://www.boost.org/doc/libs/release/libs/msm/doc/HTML/index.html), and [Qt State Machine Framework](https://doc.qt.io/qt-6/statemachine-api.html) provide:
+Popular frameworks like [Spring StateMachine](https://spring.io/projects/spring-statemachine), [Boost MSM](https://www.boost.org/libs/msm/), and [Qt State Machine Framework](https://doc.qt.io/qt-6/qtstatemachine-index.html) provide:
 - Clear and well-tested execution semantics
 - Easier declaration of states, events, and transitions
 - Built-in support for hierarchy, concurrency, time events, etc.
@@ -210,10 +226,10 @@ Typically, these models are defined in a **data format** like [SCXML (State Char
 Here is an example of our statemachine in SCXML:
 
 ```xml
-<scxml version="1.0" initial="Off" xmlns="http://www.w3.org/2005/07/scxml">
+<scxml version="1.0" initial="On" datamodel="ecmascript" xmlns="http://www.w3.org/2005/07/scxml">
   <datamodel>
-    <data id="onCount" expr="0"/>
-    <data id="isOn" expr="false"/>
+    <data id="counter" expr="0"/>
+    <data id="isOn" expr="true"/>
   </datamodel>
 
   <state id="Off">
@@ -224,7 +240,7 @@ Here is an example of our statemachine in SCXML:
 
   <state id="On">
     <onentry>
-      <script>onCount = onCount + 1;</script>
+      <script>counter = counter + 1;</script>
     </onentry>
     <transition event="buttonPressed" target="Off">
       <script>isOn = false;</script>
@@ -257,9 +273,9 @@ Here is an example of our statemachine in SCXML:
 | Static embedded systems  | Code-only or lightweight library |
 
 In practice:
-- **Code-only** is great when you generate code from tools like [itemis CREATE](https://create.itemis.io).
+- **Code-only** is great when you generate code from tools like [itemis CREATE](https://create.itemis.io/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch08-implementation).
 - **Library approaches** are ideal for larger, manually maintained projects.
-- **Interpreters** are powerful when behavior needs to change dynamically during runtime, also supported by [itemis CREATE](https://create.itemis.io)
+- **Interpreters** are powerful when behavior needs to change dynamically during runtime, also supported by [itemis CREATE](https://create.itemis.io/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch08-implementation).
 
 ---
 

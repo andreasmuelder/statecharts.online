@@ -1,8 +1,10 @@
 ---
 title: Summary and Next Steps
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2026-11-10
 layout: chapter
+redirect_from:
+  - /chapters/10-summary-and-next-steps.html
 reading_time: 8 min
 description: A recap of key concepts with suggestions for hands-on practice, tools, and where to go next.
 ---
@@ -25,7 +27,7 @@ Here's a quick recap of what we've covered:
   You added memory and logic to your models through variables, expressions, and guard conditions.
 
 - **Chapter 4: Composite States – Organizing Behavior with Hierarchy**  
-  You discovered how to simplify large diagrams using nested statecharts with entry and exit points.
+  You discovered how to simplify large diagrams by nesting states inside composite states.
 
 - **Chapter 5: Orthogonal States – Modeling Concurrency Cleanly**  
   You learned how to model independent behaviors that run side-by-side using orthogonal regions.
@@ -41,6 +43,12 @@ Here's a quick recap of what we've covered:
 
 - **Chapter 9: Best State Machine Tools and Frameworks**  
   You explored practical libraries, engines, and modeling tools, with criteria to choose the right one.
+
+- **Chapter 10: Testing State Machines**  
+  You learned how to unit test statecharts, handle time and external operations, and where formal methods find what tests miss.
+
+- **Chapter 11: Refactoring Statecharts**  
+  You learned to spot model smells and to restructure a statechart without changing its behavior.
 
 ---
 
@@ -82,7 +90,7 @@ Now that you've learned the theory, it's time to get your hands dirty. Here are 
 - Create a statechart for a UI wizard or onboarding flow
 
 You might also explore:
-- Simulation and testing of statecharts
+- Simulation and debugging of statecharts
 - Code generation for embedded systems or web applications
 - Modeling patterns and best practices
 - Integrating statecharts into larger software architectures
@@ -91,13 +99,13 @@ You might also explore:
 
 ## Try itemis CREATE
 
-To apply your knowledge and explore further, consider using [itemis CREATE](https://create.itemis.io), a powerful tool for modeling, simulating, and generating code from statecharts.
+To apply your knowledge and explore further, consider using [itemis CREATE](https://create.itemis.io/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch12-summary), a powerful tool for modeling, simulating, and generating code from statecharts.
 
 ### Key Features:
-- **Online Editor**: Model and simulate directly in your browser with the [itemis CREATE Cloud Editor](https://create.itemis.io).
-- **Examples Repository**: Access a variety of [examples](https://www.itemis.com/en/products/itemis-create/documentation/examples) to see statecharts in action.
+- **Online Editor**: Model and simulate directly in your browser with the [itemis CREATE Cloud Editor](https://create.itemis.io/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch12-summary).
+- **Examples Repository**: Access a variety of [examples](https://www.itemis.com/en/products/itemis-create/documentation/examples/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch12-summary) to see statecharts in action.
 - **Code Generation**: Generate high-quality source code in languages like C, C++, Java, Python, and more.
-- **Comprehensive Documentation**: Learn more through the [itemis CREATE Documentation](https://www.itemis.com/en/products/itemis-create/documentation/user-guide).
+- **Comprehensive Documentation**: Learn more through the [itemis CREATE Documentation](https://www.itemis.com/en/products/itemis-create/documentation/user-guide/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch12-summary).
 
 ---
 
@@ -112,7 +120,7 @@ And most of all: enjoy the journey.
 Happy modeling!
 
 <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-  <div style="text-align: left; flex: 2;"><a href="09-tools-and-frameworks.html">← Previous: Tools and Frameworks</a></div>
+  <div style="text-align: left; flex: 2;"><a href="11-refactoring-statecharts.html">← Previous: Refactoring Statecharts</a></div>
   <div style="text-align: center; flex: 1;"><a href="#top">Back to top</a></div>
   <div style="text-align: right; flex: 2;"></div>
 </div>

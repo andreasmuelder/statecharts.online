@@ -1,8 +1,9 @@
 ---
 title: Execution Semantics – How Statecharts Run and Process Events
 date: 2025-10-06
-last_modified_at: 2025-10-06
+last_modified_at: 2026-11-10
 layout: chapter
+reading_time: 12 min
 description: Understand the execution model of statecharts, event processing order, and the run-to-completion semantics that govern behavior.
 faqs:
   - question: What are execution semantics in statecharts?
@@ -27,7 +28,7 @@ Understanding how statecharts execute is crucial for building reliable, predicta
 
 This chapter explores the core execution concepts that make statecharts powerful and predictable in real-world applications.
 
-We’ll move fast and in the most compact order: first the atomic guarantee (run‑to‑completion), then step granularity (single vs super), then how engines schedule steps (event‑driven vs cycle‑based), followed by queuing rules.
+We’ll go through them in this order: first the atomic guarantee (run‑to‑completion), then step granularity (single vs super), then how engines schedule steps (event‑driven vs cycle‑based), followed by queuing rules.
 
 ---
  
@@ -46,20 +47,20 @@ A Run-To-Completion step is an **atomic execution unit** that:
 
 ### The RTC Process
 
-Conceptually, an RTC step is a bounded atomic transition sequence. The engine takes the next event from the queue and evaluates the model to see which transitions are enabled. It then leaves the current configuration by running exit actions from the innermost active states outward, performs the transition's own actions, and enters the target configuration from the outside in. If actions raised internal events, those are handled as part of the same step until the machine reaches a stable situation where no further transitions are enabled. Only then does the engine consider the step complete and move on to the next event.
+Conceptually, an RTC step is a bounded atomic transition sequence. The engine takes the next event from the queue and evaluates the model to see which transitions are enabled. It then leaves the current configuration by running exit actions from the innermost active states outward, performs the transition's own actions, and enters the target configuration from the outside in. Then the step is complete. If actions raised events during the step, those are not handled in the middle of it: they are queued and processed in follow-up steps right away, before the engine moves on to the next external event.
 
 ### RTC Step Example
 
-Let's examine how RTC works in practice with a concrete example. When you raise the event `doIt`, the run-to-completion step executes the following sequence:
+Let's examine how RTC works in practice with a concrete example. When you raise the event `doit`, the following sequence is executed:
 
-1. **Exit action** of `InnerState` is executed (`x += 1`)
-2. **Exit action** of `State1` is executed (`x += 1`) 
-3. **Transition action** of the `doIt` transition is executed (`x++`)
-4. **Entry action** of `State2` is executed (raises `internalEvent`)
-5. The `internalEvent` is added to the internal event queue and processed in the same RTC step
-6. The transition triggered by `internalEvent` executes, moving to the final state
+1. **Exit action** of `Inner State` is executed (`x += 1`)
+2. **Exit action** of `State 1` is executed (`x += 1`)
+3. **Transition action** of the `doit` transition is executed (`x++`)
+4. **Entry action** of `State 2` is executed (raises `internalEvent`)
+5. The first step is complete. `internalEvent` is waiting in the event queue
+6. A follow-up step processes `internalEvent` immediately and takes the transition to the final state
 
-All this happens within one **atomic step**. The final state is reached and the value of `x` is `3`.
+From the outside, all this is **one reaction** to `doit`: no other event can get in between. The final state is reached and the value of `x` is `3`.
 
  <iframe src="https://play.itemis.io?model=540e95ea-7e38-4c00-b1b7-d825955b8413" width="100%" height="500px" style="border: 1px solid" allowfullscreen></iframe>
 
@@ -74,11 +75,11 @@ There are two common ways to pace execution through a chain of transitions. With
 
 With **super‑step semantics**, the engine continues to take transitions within a single RTC step until the configuration becomes stable—no further transitions are enabled. That lets you “skip through” transient states in one go and can speed up models that use many such states. The trade‑off is that the amount of work per step becomes data‑dependent, and care must be taken to avoid accidental infinite loops; most engines enforce limits to keep execution bounded. In practice, single‑step semantics are a great default for testability and real‑time constraints, while super‑steps can be helpful for conceptual simplicity when traversing transient states quickly is desired.
 
-In this statechart with **super-steps disabled**, when you raise the `clicked` event, the machine transitions from `A` to `B` and stops. The variable `x` is set to `21` by the entry action of state `B`. Even though there's an immediate transition from `B` to `C`, it won't be taken until the next `clicked` event is raised.
+In this statechart with **super-steps disabled**, when you raise the `clicked` event, the machine transitions from `A` to `B` and stops. The variable `x` is set to `21` by the entry action of state `B`. The transition from `B` to `C` is triggered by `clicked` as well, but it won't be taken until the event is raised again.
 
  <iframe src="https://play.itemis.io?model=78382a20-2f3f-4757-a979-461c39336d2a" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
-In this statechart with **super-steps enabled**, when you raise the `clicked` event, the machine transitions from `A` through `B` all the way to `C` in **one atomic step**. Since `C` has no outgoing transitions, the local reaction is also executed, setting `x` to `42`.
+In this statechart with **super-steps enabled**, when you raise the `clicked` event, the machine transitions from `A` through `B` all the way to `C` in **one atomic step**, because the event stays active for the whole super step. The entry action of `C` sets `x` to `42`.
 
  <iframe src="https://play.itemis.io?model=8e90d984-4ced-4234-9288-89cc336b8966" width="100%" height="400px" style="border: 1px solid" allowfullscreen></iframe>
 
@@ -94,11 +95,11 @@ In this statechart with **super-steps enabled**, when you raise the `clicked` ev
 - You want faster progress through state chains
 - Conceptual simplicity outweighs traceability needs
 
-> **Best Practice**: Most engines default to single-step for safety. Use super-steps deliberately and test thoroughly to avoid infinite loops.
+> **Best Practice**: Engines differ in their default, so check which one yours uses. Use super-steps deliberately and test thoroughly to avoid infinite loops.
 
 ### Emulating Super Steps
 
-You can achieve super-step-like behavior in single-step systems using **internal events** (like I did in the example about Run-To-Completion Semantics). When an action raises an internal event, that event is queued and processed in the next RTC step, creating a chain of back-to-back transitions without external involvement. This approach provides the conceptual simplicity of super-steps while maintaining the predictability and traceability of single-step execution.
+You can achieve super-step-like behavior in single-step systems using **internal events** (as in the example about Run-To-Completion Semantics). When an action raises an event, that event is queued and processed in a follow-up step right away, creating a chain of back-to-back transitions without external involvement. This approach provides the conceptual simplicity of super-steps while maintaining the predictability and traceability of single-step execution.
 
 ---
 
@@ -129,7 +130,7 @@ This mode works particularly well for control systems that need regular monitori
 
 **External Events** are raised by the environment or other system components outside the statechart itself. These events are queued in the main event queue and processed according to FIFO ordering, ensuring that events are handled in the sequence they arrived.
 
-**Internal Events** are raised within the statechart during execution, often as a result of actions or transitions. These events are typically processed immediately or placed in a separate internal queue, and they enable communication between orthogonal regions within the same statechart.
+**Internal Events** are raised within the statechart during execution, often as a result of actions or transitions. These events are typically placed in a separate internal queue and processed before the next external event, and they enable communication between orthogonal regions within the same statechart.
 
 ### Best Practices for Event Handling
 

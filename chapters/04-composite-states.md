@@ -1,7 +1,7 @@
 ---
 title: Composite States – Organizing Behavior with Hierarchy
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2026-11-10
 layout: chapter
 reading_time: 10 min
 description: Use composite states to structure complex behavior with hierarchy, keeping large statecharts readable and maintainable.
@@ -16,7 +16,7 @@ faqs:
       structuring large charts into readable, reusable modules.
   - question: How do entry and exit behave for composite states?
     answer: >
-      Entering starts the nested region at its entry point; exiting leaves all
+      Entering starts the nested region at its initial state; exiting leaves all
       active substates before exiting the composite itself.
   - question: Can composite states model modes?
     answer: >
@@ -43,8 +43,8 @@ Composite states are useful when:
 - You want to create reusable sub-behaviors or modes
 
 When a composite state is entered, it behaves just like a new statechart:
-- It starts at a special **entry point**
-- A substate becomes active
+- It starts at the **entry node** of its region
+- The initial substate becomes active
 - Execution continues within the nested structure
 
 When the composite state is exited:
@@ -57,7 +57,7 @@ When the composite state is exited:
 
 This statechart models a lighting system with two main modes: `Manual` and `MotionSensing`. In `Manual` mode, the user can toggle the light on or off, while in `MotionSensing` mode, the light responds automatically to detected motion and turns off after a set period. The system allows switching between modes and manages brightness accordingly.
 
-In the provided statechart model, composite states are used to encapsulate the behavior of the lighting system in two distinct modes: Manual and MotionSensing. Each of these modes has its own internal states and transitions, which are managed independently within their respective composite states. 
+In this statechart, composite states are used to encapsulate the behavior of the lighting system in two distinct modes: Manual and MotionSensing. Each of these modes has its own internal states and transitions, which are managed independently within their respective composite states. 
 
 By encapsulating the behavior of the lighting system in separate modes, the statechart becomes easier to read and understand. Each composite state can be viewed as a self-contained module that handles specific functionality, such as manual control or motion sensing.
 
@@ -71,7 +71,7 @@ Composite states give your statecharts **structure**, **clarity**, and **scalabi
 
 - Avoid flat, hard-to-read diagrams
 - Encapsulate behavior cleanly
-- Control how behavior begins and ends using **entry** and **exit** points
+- Define where nested behavior starts and make sure it is left cleanly
 - Model modes and processes in a clear and reusable way
 
 In the next chapter, we'll explore **orthogonal states** — another powerful way to manage complexity by running states *in parallel*.

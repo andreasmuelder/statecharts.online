@@ -1,7 +1,7 @@
 ---
 title: History, Choices and the Final State – Controlling Flow and Remembering State
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2026-11-10
 layout: chapter
 reading_time: 12 min
 description: Master final states, choice nodes, and history to control flow and resume behavior where it left off.
@@ -32,7 +32,7 @@ As you model more complex behavior in a statechart, you'll need additional tools
 
 ## Example: A Survey with a History, Choice and Final State
 
-Imagine a form with multiple steps inside a composite state called `Survey`. At any time, the user can press "Pause", which returns the system to an outer state like `Init`. Later, when they hit "Continue", the system resumes **exactly where they left off** — thanks to the shallow history state.
+Imagine a form with multiple steps inside a composite state called `Survey`. At any time, the user can raise `pause`, which moves the system to the outer state `Pause`. Later, when they raise `resume`, the system resumes **exactly where they left off** — thanks to the shallow history state.
 
 The `Survey` Statechart also has a `Choice` State, depending on the answer of `Question 2` it will delegate either to `Question 3 a` or `Question 3 b`. Think about a Choice node as an `if/then/else` or a `switch/case`.
 
@@ -55,7 +55,7 @@ History states are useful when:
 
 ### Shallow History
 
-At any time, the user can press `Pause`, which returns the system to the outer state `Pause`. Later, when they hit `Resume`, the system resumes **exactly where they left off** — thanks to the shallow history state.
+In the survey example, the history state inside `Survey` is a shallow one: after `resume`, the survey continues with the question that was active when `pause` was raised.
 
 Shallow history tracks only the most recent active substate in that region.
 
@@ -91,7 +91,7 @@ Final states are typically used to:
 - Trigger transitions to a new phase
 - Coordinate across parallel regions
 
-Each region can have **one final state**, and it may have **multiple incoming transitions**.
+A final state may have **multiple incoming transitions**, as in the survey, where both `Question 3 a` and `Question 3 b` lead to it.
 
 > If a state machine has multiple orthogonal regions, execution only proceeds when **all** regions have reached their final state.
 
@@ -109,7 +109,7 @@ These advanced flow control tools give you more flexibility and precision in you
 
 Used correctly, they can make your models more robust, interactive, and user-friendly — especially in systems where users pause, resume, retry, or take different paths based on conditions.
 
-In the next chapter, we'll explore how all these concepts come together in real-world patterns and best practices for designing readable, scalable statecharts.
+In the next chapter, we'll look at how a statechart actually runs: how events are processed and in which order things happen.
 
 ---
 

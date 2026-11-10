@@ -35,6 +35,17 @@
 
       // Close menu when clicking on a link
       const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+      // Highlight the current chapter and make sure it is visible in the sidebar
+      sidebarLinks.forEach(link => {
+        if (link.getAttribute('href') === window.location.pathname && link.closest('.sidebar-nav')) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
+          if (window.innerWidth > 800 && sidebar.scrollHeight > sidebar.clientHeight) {
+            sidebar.scrollTop = link.offsetTop - sidebar.clientHeight / 2;
+          }
+        }
+      });
       sidebarLinks.forEach(link => {
         link.addEventListener('click', function() {
           if (window.innerWidth <= 800) {
@@ -54,6 +65,34 @@
           document.body.classList.remove('menu-open');
           menuToggle.textContent = '☰';
         }
+      });
+
+      // Scroll guard for embedded players: the page scrolls over them until they are clicked
+      document.querySelectorAll('.main-content iframe').forEach(frame => {
+        const wrapper = document.createElement('span');
+        wrapper.className = 'player-guard';
+        frame.parentNode.insertBefore(wrapper, frame);
+        wrapper.appendChild(frame);
+
+        const overlay = document.createElement('button');
+        overlay.type = 'button';
+        overlay.className = 'player-guard-overlay';
+        overlay.setAttribute('aria-label', 'Activate interactive statechart');
+        overlay.innerHTML = '<span class="player-guard-hint">Click to interact</span>';
+        wrapper.appendChild(overlay);
+
+        overlay.addEventListener('click', () => {
+          wrapper.classList.add('active');
+          frame.focus();
+        });
+        wrapper.addEventListener('mouseleave', () => wrapper.classList.remove('active'));
+      });
+
+      // Touch devices have no mouseleave: guard again when tapping outside the player
+      document.addEventListener('pointerdown', event => {
+        document.querySelectorAll('.player-guard.active').forEach(wrapper => {
+          if (!wrapper.contains(event.target)) wrapper.classList.remove('active');
+        });
       });
     </script>
   </body>

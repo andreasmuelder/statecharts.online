@@ -12,10 +12,12 @@ This site provides a structured introduction to statecharts, covering:
 - Execution semantics
 - Implementation strategies
 - Tools and frameworks
+- Testing and formal methods
+- Model smells and refactoring
 
 ## Structure
 
-The tutorial is organized into 10 progressive chapters:
+The tutorial is organized into 12 progressive chapters:
 1. What is a State Machine
 2. States, Transitions, and Events
 3. Variables
@@ -25,14 +27,16 @@ The tutorial is organized into 10 progressive chapters:
 7. Execution Semantics
 8. Implementation Strategies
 9. Tools and Frameworks
-10. Summary and Next Steps
+10. Testing State Machines
+11. Refactoring Statecharts
+12. Summary and Next Steps
 
 All chapters include interactive examples using itemis CREATE statechart player.
 
 ## Navigation
 
 - Main page: https://statecharts.online/
-- Chapters: https://statecharts.online/chapters/[01-10]-[chapter-name].html
+- Chapters: https://statecharts.online/chapters/[01-12]-[chapter-name].html
 - Sitemap: https://statecharts.online/sitemap.xml
 
 ## Key Concepts

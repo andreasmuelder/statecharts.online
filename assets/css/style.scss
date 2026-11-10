@@ -18,8 +18,9 @@
 // Sidebar
 .sidebar {
     width: 280px;
-    padding: 30px 20px;
+    padding: 30px 20px 20px 20px;
     flex-shrink: 0;
+    align-self: flex-start;
     position: sticky;
     top: 30px;
     max-height: calc(100vh - 60px);
@@ -33,7 +34,7 @@
     color: #495057;
     font-size: 1.2em;
     font-weight: 600;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
     padding-bottom: 8px;
     border-bottom: 2px solid #e9ecef;
     text-align: center;
@@ -42,7 +43,7 @@
 .sidebar-logo {
     background-color: white;
     padding: 15px;
-    margin: -30px -20px 20px -20px;
+    margin: -30px -20px 15px -20px;
     border-radius: 8px 8px 0 0;
     border-bottom: 1px solid #e9ecef;
 }
@@ -57,14 +58,14 @@
     }
     
     li {
-        margin-bottom: 8px;
+        margin-bottom: 3px;
         line-height: 1.4;
     }
     
     a {
         color: #2a7ae2;
         text-decoration: none;
-        padding: 6px 8px;
+        padding: 5px 8px;
         border-radius: 4px;
         display: block;
         transition: all 0.2s ease;
@@ -83,6 +84,52 @@
             color: #1e5ba8;
         }
     }
+}
+
+// Scroll guard for embedded players
+.player-guard {
+    display: block;
+    position: relative;
+    line-height: 0;
+
+    iframe {
+        display: block;
+    }
+}
+
+.player-guard-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover .player-guard-hint,
+    &:focus-visible .player-guard-hint {
+        opacity: 1;
+    }
+}
+
+.player-guard-hint {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background-color: rgba(33, 37, 41, 0.8);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+}
+
+.player-guard.active .player-guard-overlay {
+    display: none;
 }
 
 // Main Content

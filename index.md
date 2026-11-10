@@ -30,7 +30,7 @@ This guide is designed to be:
 - **Hands-on**: Encouraging you to try things out as you learn
 
 Each concept of state machines introduced in this guide is illustrated with an executable player.  
-Using the [itemis CREATE Player](https://create.itemis.io), you can interactively raise events, inspect variable values, and observe the statechart executing step-by-step.  
+Using the [itemis CREATE Player](https://create.itemis.io/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=home), you can interactively raise events, inspect variable values, and observe the statechart executing step-by-step.  
 This hands-on experience is invaluable for developing a deeper understanding of how the system reacts, how transitions are triggered, and how variables evolve over time.  
 Seeing the statechart "in motion" helps bridge the gap between theory and practice, making it much easier to grasp the underlying semantics while executing real examples.
 

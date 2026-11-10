@@ -1,7 +1,7 @@
 ---
 title: What is a State Machine? Complete Beginner's Guide to Statecharts
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2026-11-10
 layout: chapter
 reading_time: 10 min
 description: Learn what state machines and statecharts are with practical examples. Complete beginner's guide to understanding finite state machines in software development.
@@ -14,7 +14,7 @@ faqs:
   - question: How is a statechart different from a state machine?
     answer: >
       A statechart extends a basic state machine with powerful features like
-      hierarchy, concurrency, history, and guards—making complex behavior easier
+      hierarchy, concurrency, and history—making complex behavior easier
       to model and maintain.
   - question: Why should I use state machines?
     answer: >
@@ -31,7 +31,7 @@ State machines are one of those concepts that sound more complicated than they r
 
 The good news? You don't need a PhD in computer science to understand or use **finite state machines**. In fact, state machines (or *statecharts*, as they're often called in modern tools) are a simple and powerful way to model behavior in many kinds of systems.
 
-> **Terminology Note**: Throughout this guide, we use **"state machine"** and **"statechart"** somewhat interchangeably, but there's an important distinction: A basic **state machine** has states and transitions. A **statechart** extends this with powerful features like hierarchy (nested states), concurrency (parallel regions), history states, and guards. Think of statecharts as "state machines on steroids"—more expressive and better suited for complex, real-world systems. We'll start with basic state machines and gradually introduce statechart features as we go.
+> **Terminology Note**: Throughout this guide, we use **"state machine"** and **"statechart"** somewhat interchangeably, but there's an important distinction: A basic **state machine** has states and transitions. A **statechart** extends this with powerful features like hierarchy (nested states), concurrency (parallel regions), and history states. Think of statecharts as "state machines on steroids"—more expressive and better suited for complex, real-world systems. We'll start with basic state machines and gradually introduce statechart features as we go.
 
 They're especially useful for **event-driven programming**—systems that respond to external events like button presses, sensor triggers, or user input. Think of elevators, washing machines, or even interactive UIs.
 
@@ -53,7 +53,7 @@ Let's take a practical example: a bicycle light controller.
 
 ---
 
-### Example: A Bicycle Light Controller
+## Example: A Bicycle Light Controller
 
 <iframe src="/assets/html/bicycle-light.html" width="100%" height="900px" style="border: none;" allowfullscreen></iframe>
 
@@ -66,7 +66,7 @@ The bicycle light has three modes, cycled through with a single button:
 There is one input:
 - `button.pressed`
 
-Pressing the button on the saddle cycles through the modes: **Off → On → Blinking → Off**.
+Pressing the button cycles through the modes: **Off → On → Blinking → Off**.
 
 Inside the `light_blinking` state, no button press is needed—the `after 400 ms` timer drives the transitions between its internal `light_off` and `light_on` sub-states automatically.
 
@@ -94,7 +94,7 @@ Some real-world uses include:
 - Microservice orchestration
 - IoT device management
 
-State machines also make it easier to simulate, test, and even generate code for your system — especially when using tools like [itemis CREATE](https://www.itemis.com/en/yakindu/state-machine/), which let you model, simulate, and export code for your charts for different target platforms like C/C++, Java or Python.
+State machines also make it easier to simulate, test, and even generate code for your system — especially when using tools like [itemis CREATE](https://www.itemis.com/en/products/itemis-create/?utm_source=statecharts.online&utm_medium=referral&utm_campaign=state-machine-guide&utm_content=ch01-what-is-a-state-machine), which let you model, simulate, and export code for your charts for different target platforms like C/C++, Java or Python.
 
 This approach to **software architecture** makes your systems more predictable, easier to debug, and simpler to extend. Whether you're building embedded systems, web applications, or mobile apps, understanding finite state machines will improve your **software design** skills.
 
